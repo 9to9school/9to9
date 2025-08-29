@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero with Floating Blobs</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 10s linear infinite',
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="font-sans pt-20">
+
+    <!-- Sticky Header -->
+    <header id="mainHeader" class="bg-blue-50 px-4 py-3 fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <img src="./logo.svg" alt="Logo" class="rounded-lg w-20" />
+            <div class="hidden md:flex space-x-4">
+                <button class="bg-white text-cyan-500 px-4 py-2 rounded-md hover:bg-gray-100 text-lg">Talk to
+                    Expert</button>
+                <button class="bg-cyan-400 text-white px-4 py-2 rounded-md hover:bg-cyan-500 text-lg">Book a
+                    Appointment</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Decorative Wave Line -->
+    <div class="bg-[linear-gradient(280deg,#EDFEFC_13.84%,#FEF6EC_96.14%)] py-10 fade-up">
+        <svg viewBox="0 0 1440 50" preserveAspectRatio="none" class="w-full">
+            <path id="snakeLine"
+                d="M0,30 Q30,0 60,30 T120,30 T180,30 T240,30 T300,30 T360,30 T420,30 T480,30 T540,30 T600,30 T660,30 T720,30 T780,30 T840,30 T900,30 T960,30 T1020,30 T1080,30 T1140,30 T1200,30 T1260,30 T1320,30 T1380,30 T1440,30"
+                stroke="#06b6d4" stroke-width="2" fill="none" />
+        </svg>
+    </div>
+    <!-- image above footer -->
+    <div class="px-5 md:px-8 lg:px-10 ">
+        <img src="./assets/footerimg.png" alt class="w-full object-cover">
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative bg-[linear-gradient(280deg,#EDFEFC_13.84%,#FEF6EC_96.14%)] px-4 py-20 fade-up">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 relative z-10">
+            <!-- Text Content -->
+            <div class="flex-1 space-y-4">
+                <span class="text-sm uppercase text-gray-500 bg-white p-3 rounded-full text-[12px]" id="tagline">
+                    Welcome to MyApp
+                </span>
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight" id="headline">
+                    Welcome to the <br />
+                    <span class="text-cyan-500">9 TO 9 School</span>
+                </h1>
+                <p class="text-gray-700 max-w-md" id="subtext">
+                    Lorem ipsum dolor sit amet consectetur. Pulvinar nunc amet pretium pellentesque.
+                    Ornare in arcu elit quisque iaculis.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4" id="buttons">
+                    <button class="bg-cyan-500 text-white px-6 py-2 rounded hover:bg-cyan-600 transition">Enroll Now
+                        →</button>
+                    <button
+                        class="bg-white border border-cyan-500 text-cyan-500 px-6 py-2 rounded hover:bg-cyan-100 transition">
+                        Schedule a Visit →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hero Image with Floating Blobs -->
+            <div class="flex-1 relative" id="heroImage">
+                <img src="./Vector.png" alt="Child playing"
+                    class="w-full max-w-md mx-auto rounded-[100px] relative z-10 filter drop-shadow-2xl" />
+                <img id="float1" src="./Frame.svg" alt="">
+                <img id="float2" src="./Group_67.svg" alt="">
+                <img id="float3" class="absolute w-full h-full bottom-6 right-0 z-0" src="./Group_68.svg" alt="">
+                <img id="float3" class="absolute w-20 h-20 bottom-6 right-0 z-0" src="./Group_68.svg" alt="">
+                <img id="float4" class="absolute w-10 h-10 -bottom-8 left-1/2 z-0" src="./Group_63.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Section -->
+    <section class="relative bg-white py-20 px-4 fade-up">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+            <!-- Left Side: Animated Dotted Circles -->
+            <div class="relative w-full md:w-1/2 h-[400px] flex items-center justify-center">
+                <!-- Main Large Circle -->
+                <div class="relative w-60 h-62 z-30">
+                    <div class="absolute inset-0 rounded-full border-4 border-dotted border-red-300 animate-spin-slow">
+                    </div>
+                    <img src="./Ellipse_37.png" alt="Main Kids" class="w-full h-full object-cover rounded-full p-5" />
+                </div>
+
+                <!-- Top Left Circle -->
+                <div class="absolute -top-10 -left-6 w-65 h-65 z-20">
+                    <div class="absolute inset-0 rounded-full border-4 border-dotted border-cyan-400 animate-spin-slow">
+                    </div>
+                    <img src="./Ellipse_36.png" alt="Kid 1" class="w-full h-full object-cover rounded-full p-5" />
+                </div>
+
+                <!-- Bottom Left Circle -->
+                <div class="absolute -bottom-10 left-0 w-50 h-50 z-40">
+                    <div
+                        class="absolute inset-0 rounded-full border-4 border-dotted border-yellow-300 animate-spin-slow">
+                    </div>
+                    <img src="./Ellipse_35.png" alt="Kid 2" class="w-full h-full object-cover rounded-full p-4" />
+                </div>
+            </div>
+
+            <!-- Right Side: Text Content -->
+            <div class="w-full md:w-1/2 space-y-4 text-center md:text-left explore-text">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-snug">
+                    Explore and grow with <br />
+                    <span class="text-cyan-500">9 TO 9 School</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-md mx-auto md:mx-0">
+                    Suspendisse non blandit sapien. Nunc eleifend, enim et porta porta, eros risus tincidunt diam, vel
+                    sodales.
+                </p>
+                <div class="pt-4">
+                    <button
+                        class="bg-cyan-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-cyan-600 transition-all">
+                        Why 9 To 9 →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Why Choose Us Section -->
+    <section class="bg-[linear-gradient(280deg,#EDFEFC_13.84%,#FEF6EC_96.14%)] py-20 px-4 fade-up">
+        <div class="max-w-7xl mx-auto text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Why Choose Us?</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                Our platform offers a range of features designed to make learning accessible,
+                flexible, and tailored to your child's unique needs.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center fade-up">
+            <!-- Left Column Features -->
+            <div class="space-y-10">
+                <!-- Feature 1 -->
+                <div class="max-w-xs mx-auto text-center space-y-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-cyan-500 text-white flex items-center justify-center mx-auto font-bold">
+                        1</div>
+                    <h3 class="text-xl font-semibold">Customized Classes</h3>
+                    <p class="text-gray-600 text-sm">
+                        Choose subjects, teachers, and schedules that work best for your child.
+                    </p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="max-w-xs mx-auto text-center space-y-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-cyan-500 text-white flex items-center justify-center mx-auto font-bold">
+                        2</div>
+                    <h3 class="text-xl font-semibold">Personalized Timetable</h3>
+                    <p class="text-gray-600 text-sm">
+                        Adjust learning pace and schedule as per your child's unique needs.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Center Image -->
+            <div class="relative max-w-sm mx-auto">
+                <img src="./mock.png" alt="Chat UI" class="rounded-xl w-full h-auto h-62 " />
+            </div>
+
+            <!-- Right Column Features -->
+            <div class="space-y-10">
+                <!-- Feature 3 -->
+                <div class="max-w-xs mx-auto text-center space-y-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-cyan-500 text-white flex items-center justify-center mx-auto font-bold">
+                        3</div>
+                    <h3 class="text-xl font-semibold">Flexible Fee Plans</h3>
+                    <p class="text-gray-600 text-sm">
+                        Pay as per usage and budget with multiple payment options.
+                    </p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="max-w-xs mx-auto text-center space-y-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-cyan-500 text-white flex items-center justify-center mx-auto font-bold">
+                        4</div>
+                    <h3 class="text-xl font-semibold">Live Chat with Teachers</h3>
+                    <p class="text-gray-600 text-sm">
+                        Direct interaction for parents to discuss progress and concerns.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Tailored to Your Child -->
+    <section class="py-16 bg-[#E8F4FE]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Heading -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
+                    Programs Tailored to Your Child
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    We offer specialized programs for different age groups, ensuring each
+                    child receives the appropriate level of education and care.
+                </p>
+            </div>
+
+            <!-- Card Container (3 columns) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                <!-- Card 1: Toddlers -->
+                <div class="program-card bg-white border border-gray-200 shadow-sm rounded-lg p-6 flex flex-col">
+                    <!-- Image -->
+                    <img src="./image.png" alt="Toddlers" class="w-full h-48 object-cover rounded-md mb-4" />
+                    <!-- Title & Description -->
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                        Toddlers (1-2 Years)
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Focused on sensory exploration, motor skills, and building secure
+                        attachments with caregivers.
+                    </p>
+                    <!-- Key Skills -->
+                    <h4 class="font-semibold text-gray-800 mb-2">Key Skills Developed:</h4>
+                    <ul class="grid grid-cols-2 gap-4 mb-6">
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img src="./bi_patch-check-fill.png"
+                                    alt="" srcset=""></span>
+                            <span>Letter recognition</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img
+                                    src="./bi_patch-check-fill _res.png" alt="" srcset=""></span>
+                            <span>Number concepts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img
+                                    src="./bi_patch-check-fill_purple.png" alt="" srcset=""></span>
+                            <span>Cooperative play</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img
+                                    src="./bi_patch-check-fill_sky.png" alt="" srcset=""></span>
+                            <span>Emotional expression</span>
+                        </li>
+                    </ul>
+                    <!-- Button -->
+                    <a href="#"
+                        class="mt-auto inline-block px-5 py-2 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors"
+                        style="width: 150px;background-color: #ff7426;">Learn
+                        More</a>
+                </div>
+
+                <!-- Card 2: Early Preschool -->
+                <div class="program-card bg-white border border-gray-200 shadow-sm rounded-lg p-6 flex flex-col">
+                    <img src="./image_1.png" alt="Early Preschool" class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                        Early Preschool (2-3 Years)
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Encouraging independence, language development, and structured play
+                        with peers.
+                    </p>
+                    <h4 class="font-semibold text-gray-800 mb-2">Key Skills Developed:</h4>
+                    <ul class="grid grid-cols-2 gap-4 mb-6">
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img src="./bi_patch-check-fill.png"
+                                    alt="" srcset=""></span>
+                            <span>Letter recognition</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img
+                                    src="./bi_patch-check-fill _res.png" alt="" srcset=""></span>
+                            <span>Number concepts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img
+                                    src="./bi_patch-check-fill_purple.png" alt="" srcset=""></span>
+                            <span>Cooperative play</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img
+                                    src="./bi_patch-check-fill_sky.png" alt="" srcset=""></span>
+                            <span>Emotional expression</span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="mt-auto inline-block px-5 py-2 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors"
+                        style="width: 150px;background-color: #ff7426;">Learn
+                        More</a>
+                </div>
+
+                <!-- Card 3: Preschool -->
+                <div class="program-card bg-white border border-gray-200 shadow-sm rounded-lg p-6 flex flex-col">
+                    <img src="./image_2.png" alt="Preschool" class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                        Preschool (3-4 Years)
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Building pre-academic foundations through guided activities and
+                        emotional regulation.
+                    </p>
+                    <h4 class="font-semibold text-gray-800 mb-2">Key Skills Developed:</h4>
+                    <ul class="grid grid-cols-2 gap-4 mb-6">
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img src="./bi_patch-check-fill.png"
+                                    alt="" srcset=""></span>
+                            <span>Letter recognition</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img
+                                    src="./bi_patch-check-fill _res.png" alt="" srcset=""></span>
+                            <span>Number concepts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img
+                                    src="./bi_patch-check-fill_purple.png" alt="" srcset=""></span>
+                            <span>Cooperative play</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="inline-block w-5 h-5 rounded-full mr-2"> <img
+                                    src="./bi_patch-check-fill_sky.png" alt="" srcset=""></span>
+                            <span>Emotional expression</span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="mt-auto inline-block px-5 py-2 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors"
+                        style="width: 150px;background-color: #ff7426;">Learn
+                        More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="safety-section" class="py-16 bg-yellow-100 relative overflow-hidden">
+        <!-- Optional Parallax Background -->
+        <!-- 
+          If you want a parallax effect, you can add a background image or gradient
+          to this absolutely-positioned div and animate it with GSAP.
+        <div
+          class="parallax-bg absolute inset-0 bg-cover bg-center"
+          style="background-image: url('your-parallax-image.jpg'); opacity: 0.2;"
+        ></div>
+        -->
+
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class=" md:text-4xl font-bold text-center mb-8" style="font-size: 70px; line-height: 1.2;">
+                Where Your Child's Safety Comes First
+            </h2>
+
+            <!-- Grid of Safety Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="safety-card bg-white rounded-lg shadow p-6 flex flex-col items-center">
+                    <!-- Circle Icon -->
+                    <div class="w-50 h-50 rounded-full bg-pink-100 flex items-center justify-center mb-4">
+                        <!-- Example camera icon (Unicode) -->
+                        <span class="text-pink-60">
+                            <img src="./Vector1.png" alt="" srcset="" class="p-5">
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">CCTV Monitoring</h3>
+                    <p class="text-gray-600 text-center">
+                        Constant video surveillance for enhanced security.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="safety-card bg-white rounded-lg shadow p-6 flex flex-col items-center">
+                    <div class="w-50 h-50 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                        <!-- First aid (Unicode) -->
+                        <span class="text-green-600 text-2xl">
+
+                            <img src="./humbleicons_aid.png" alt="" srcset="" class="p-5">
+
+
+
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">First Aid Kits</h3>
+                    <p class="text-gray-600 text-center">
+                        Fully stocked for immediate response.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="safety-card bg-white rounded-lg shadow p-6 flex flex-col items-center">
+                    <div class="w-50 h-50 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                        <!-- Staff icon (combination of emojis) -->
+                        <span class="text-blue-600 text-2xl">
+                            <img src="./vector3.png" alt="" srcset="" class="p-5">
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Trained Staff</h3>
+                    <p class="text-gray-600 text-center">
+                        Qualified in Early Childhood Care.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="safety-card bg-white rounded-lg shadow p-6 flex flex-col items-center">
+                    <div class="w-50 h-50 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
+                        <!-- Doctor/pediatrician icon (Unicode) -->
+                        <span class="text-yellow-600 text-2xl">
+
+                            <img src="./vector4.png" alt="" srcset="" class="p-5">
+
+
+
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Pediatrician On Call</h3>
+                    <p class="text-gray-600 text-center">
+                        Immediate medical advice and support.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="safety-card bg-white rounded-lg shadow p-6 flex flex-col items-center">
+                    <div class="w-50 h-50 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                        <!-- Safety/hygiene icon -->
+                        <span class="text-purple-600 text-2xl">
+                            <img src="./ant-design_safety-outlined.png" alt="" srcset="" class="p-5">
+
+
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">WHO & UNESCO Standards</h3>
+                    <p class="text-gray-600 text-center">
+                        Strict safety & hygiene guidelines.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="safety-card bg-white rounded-lg shadow p-6 flex flex-col items-center">
+                    <div class="w-50 h-50 rounded-full bg-red-100 flex items-center justify-center mb-4">
+                        <!-- Fire safety icon -->
+                        <span class="text-red-600 text-2xl">
+
+                            <img src="./fluent_fire-20-regular.png" alt="" srcset="" class="p-5">
+
+
+
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Fire Safety Protocol</h3>
+                    <p class="text-gray-600 text-center">
+                        Regular drills and secure exits.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-12">
+        <!-- Heading -->
+        <div class="max-w-7xl mx-auto px-4 text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Gallery</h2>
+        </div>
+
+        <!-- Grid Container -->
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item overflow-hidden rounded-lg">
+                    <img src="./full.png" alt="Gallery image 1" class="w-full h-full object-cover" />
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item overflow-hidden rounded-lg">
+                    <img src="./Container.png" alt="Gallery image 2" class="w-full h-full object-cover" />
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item overflow-hidden rounded-lg">
+                    <img src="./Container1.png" alt="Gallery image 3" class="w-full h-full object-cover" />
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item overflow-hidden rounded-lg">
+                    <img src="./Container2.png" alt="Gallery image 4" class="w-full h-full object-cover" />
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item overflow-hidden rounded-lg">
+                    <img src="./Container3.png" alt="Gallery image 5" class="w-full h-full object-cover" />
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-white" id="enquiry-form">
+        <div class="max-w-2xl mx-auto text-center mb-8">
+            <h2 class="text-4xl font-bold text-gray-900">ENQUIRE NOW</h2>
+        </div>
+
+        <div class="max-w-2xl mx-auto bg-white shadow-xl rounded-xl p-8 space-y-6 form-container">
+            <!-- Full Name -->
+            <div>
+                <label class="block text-gray-700 mb-1 font-medium">Full Name</label>
+                <input type="text" placeholder="Full Name"
+                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+            </div>
+
+            <!-- Email ID -->
+            <div>
+                <label class="block text-gray-700 mb-1 font-medium">Email ID</label>
+                <input type="email" placeholder="Email ID"
+                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+            </div>
+
+            <!-- Phone Number -->
+            <div>
+                <label class="block text-gray-700 mb-1 font-medium">Phone Number</label>
+                <input type="tel" placeholder="Phone Number"
+                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+            </div>
+
+            <!-- Grid: State & City -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-gray-700 mb-1 font-medium">Select State</label>
+                    <input type="text" placeholder="State"
+                        class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1 font-medium">Select City</label>
+                    <input type="text" placeholder="City"
+                        class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+                </div>
+            </div>
+
+            <!-- Message -->
+            <div>
+                <label class="block text-gray-700 mb-1 font-medium">Message</label>
+                <textarea rows="4" placeholder="Write Message"
+                    class="w-full border border-gray-300 rounded-md px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button class="bg-cyan-500 text-white px-6 py-2 rounded-md hover:bg-cyan-600 transition duration-300">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- image above footer -->
+    <div class="px-5 md:px-8 lg:px-10 ">
+        <img src="./footerimg.png" alt class="w-full object-cover">
+    </div>
+
+
+    <!-- footer -->
+    <footer class="bg-white px-5 md:px-8 lg:px-10  py-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 place-items-center gap-8">
+            <!-- Left Section (Logo & Description) -->
+            <div>
+                <div class="flex items-center space-x-2">
+                    <img src="./logo.png" alt="Logo" class="w-10 h-10 rounded-full">
+                    <img src="./textinput.png" class>
+                </div>
+                <p class="font-semibold text-sm mt-2">
+                    Where every game is a lesson, and every lesson is a
+                    game. Our app transforms education into playful
+                    games,
+                    captivating young minds with interactive fun.
+                </p>
+                <div class="flex space-x-3 mt-4">
+                    <button>
+                        <img src="./plarstore.png" alt="Google Play" class="h-10">
+                    </button>
+                    <button>
+                        <img src="./appstore.png" alt="App Store" class="h-10">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-bold">Quick links</h3>
+                <ul class="mt-3 space-y-2 font-semibold">
+                    <li><a href="#" class="hover:text-black">Home</a></li>
+                    <li><a href="#" class="hover:text-black">Games</a></li>
+                    <li><a href="#" class="hover:text-black">Subjects</a></li>
+                    <li><a href="#" class="hover:text-black">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h3 class="text-lg font-bold">Company</h3>
+                <ul class="mt-3 space-y-2 font-semibold">
+                    <li><a href="#" class="hover:text-black">About</a></li>
+                    <li><a href="#" class="hover:text-black">Features</a></li>
+                    <li><a href="#" class="hover:text-black">Works</a></li>
+                    <li><a href="#" class="hover:text-black">Career</a></li>
+                </ul>
+            </div>
+
+            <!-- Gallery -->
+            <div>
+                <h3 class="text-lg font-bold">Gallery</h3>
+                <div class="grid grid-cols-3 gap-2 mt-3">
+                    <img src="./gallery1.png" alt="Gallery" class="rounded-lg h-20 w-full">
+                    <img src="./gallary2.png" alt="Gallery" class="rounded-lg h-20 w-full">
+                    <img src="./gallery3.jpeg" alt="Gallery" class="rounded-lg h-20 w-full">
+                    <img src="./gallery4.jpeg" alt="Gallery" class="rounded-lg h-20 w-full">
+                    <img src="./gallery5.jpeg" alt="Gallery" class="rounded-lg h-20 w-full">
+                    <img src="./gallery5.jpeg" alt="Gallery" class="rounded-lg h-20 w-full">
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div
+            class="mt-8 border-t border-t-black/20 pt-4 flex flex-col md:flex-row justify-between font-semibold text-sm">
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-black">Privacy Policy</a>
+                <a href="#" class="hover:text-black">Terms &
+                    Conditions</a>
+                <a href="#" class="hover:text-black">Support</a>
+            </div>
+            <p class="mt-4 md:mt-0">&copy; Copyright 2024, All Rights
+                Reserved</p>
+        </div>
+    </footer>
+
+
+
+    <!-- GSAP Animations -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate each gallery item when it comes into view
+        gsap.from(".gallery-item", {
+            scrollTrigger: {
+                trigger: ".gallery-item",
+                start: "top 80%", // animation starts when gallery item is near viewport
+                toggleActions: "play none none reverse",
+            },
+            opacity: 0,
+            y: 50, // move upward into place
+            duration: 1,
+            stagger: 0.2, // each item starts 0.2s after the previous one
+            ease: "power2.out",
+        });
+        gsap.from(".form-container", {
+            scrollTrigger: {
+                trigger: "#enquiry-form",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            },
+            opacity: 0,
+            y: 60,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.utils.toArray(".form-container input, .form-container textarea").forEach((el, i) => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%",
+                },
+                opacity: 0,
+                x: -30,
+                delay: i * 0.05,
+                duration: 0.6,
+                ease: "power2.out"
+            });
+        });
+
+
+        // Animate the cards when they come into view
+        gsap.from(".program-card", {
+            scrollTrigger: {
+                trigger: ".program-card",
+                start: "top 80%", // adjust as needed
+                toggleActions: "play none none reverse",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.out",
+        });
+
+        gsap.from('.safety-card', {
+            scrollTrigger: {
+                trigger: '#safety-section',
+                start: 'top 80%', // Adjust as needed
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power2.out',
+        });
+
+        window.addEventListener("load", () => {
+            // Hero Text
+            gsap.from("#tagline", { opacity: 0, y: -20, duration: 0.6, delay: 0.2 });
+            gsap.from("#headline", { opacity: 0, y: 30, duration: 0.8, delay: 0.4, ease: "power3.out" });
+            gsap.from("#subtext", { opacity: 0, y: 20, duration: 0.7, delay: 0.6, ease: "power2.out" });
+            gsap.from("#buttons", { opacity: 0, y: 20, duration: 0.8, delay: 0.8, stagger: 0.2 });
+            gsap.from("#heroImage img", { opacity: 0, scale: 0.9, duration: 1, delay: 0.7, ease: "back.out(1.7)" });
+
+            // Snake Line
+            const snake = document.querySelector("#snakeLine");
+            const length = snake.getTotalLength();
+            snake.style.strokeDasharray = length;
+            snake.style.strokeDashoffset = length;
+            gsap.to(snake, {
+                strokeDashoffset: 0,
+                duration: 2,
+                ease: "power2.out",
+                delay: 0.1,
+            });
+
+            // Floating blobs
+            const floatBlob = (selector, x = 15, y = 10, duration = 4) => {
+                gsap.to(selector, {
+                    x, y,
+                    duration,
+                    ease: "sine.inOut",
+                    repeat: -1,
+                    yoyo: true
+                });
+            };
+            floatBlob("#float1", 10, 6, 5);
+            floatBlob("#float2", -8, 12, 4);
+            floatBlob("#float3", 6, -10, 6);
+            floatBlob("#float4", -14, 8, 5);
+
+            // Explore section scroll animation
+            gsap.from(".explore-text > *", {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".explore-text",
+                    start: "top 80%",
+                }
+            });
+
+            // Fade-up animation for all sections with 'fade-up'
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                gsap.from(el, {
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                    }
+                });
+            });
+
+            // Sticky header behavior
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('mainHeader');
+                if (window.scrollY > 10) {
+                    header.classList.add('shadow-lg', 'bg-white');
+                } else {
+                    header.classList.remove('shadow-lg', 'bg-white');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

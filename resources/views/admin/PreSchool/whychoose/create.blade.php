@@ -1,0 +1,190 @@
+@extends('layouts.admin')
+
+@section('title', 'Add Banner')
+@section('content')
+
+    <div class="page-wrapper">
+        <div class="content content-two">
+
+            <!-- Page Header -->
+            <div class="d-md-flex d-block align-items-center justify-content-between mb-3">
+                <div class="my-auto mb-2">
+                    <h3 class="mb-1">Add Pre Why Choose Us</h3>
+                    <nav>
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('pre.choose.index') }}">Pre Why Choose U</a></li>
+{{--                            <li class="breadcrumb-item active" aria-current="page">Add Pre Explore</li>--}}
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <!-- /Page Header -->
+            <!-- /Page Header -->
+
+            <div class="row">
+                @if ($errors->any())
+                    <div class="alert alert-danger"><ul>@foreach ($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>
+                @endif
+                @if (Session::has('success')) <div class="alert alert-success">{{ Session('success') }}</div> @endif
+                @if (Session::has('error')) <div class="alert alert-danger">{{ Session('error') }}</div> @endif
+                <div class="col-md-12">
+                    @php
+                        $isEdit = isset($data); // Check if it's edit mode
+                        $action = $isEdit ? route('pre.choose.update', $data->id) : route('pre.choose.store');
+                    @endphp
+                    <form action="{{ $action }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                <div class="d-flex align-items-center">
+                                <span class="bg-white avatar avatar-sm me-2 text-gray-7 flex-shrink-0">
+                                    <i class="ti ti-info-square-rounded fs-16"></i>
+                                </span>
+                                    <h4 class="text-dark">Add Pre Why Choose U</h4>
+                                </div>
+                            </div>
+                            <div class="card-body pb-1">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="mb-3">
+                                            <label class="form-label">Heading <span class="text-danger">*</span></label>
+                                            <input type="text" name="heading" class="form-control" value="{{ old('heading', $data->heading ?? '') }}">
+                                            @error('heading')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Description <span class="text-danger">*</span></label>
+                                            <textarea name="description" rows="3" class="form-control">{{ old('description', $data->description ?? '') }}</textarea>
+                                            @error('description')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Title 1 <span class="text-danger">*</span></label>
+                                            <input type="text" name="title" class="form-control" value="{{ old('title', $data->title ?? '') }}">
+                                            @error('title')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <div class="mb-3">
+                                            <label class="form-label">Paragraph 1 <span class="text-danger">*</span></label>
+                                            <input type="text" name="paragraph" class="form-control" value="{{ old('paragraph', $data->paragraph ?? '') }}">
+                                            @error('paragraph')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Title 2 <span class="text-danger">*</span></label>
+                                            <input type="text" name="title2" class="form-control" value="{{ old('title2', $data->title2 ?? '') }}">
+                                            @error('title2')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <div class="mb-3">
+                                            <label class="form-label">Paragraph 2 <span class="text-danger">*</span></label>
+                                            <input type="text" name="paragraph2" class="form-control" value="{{ old('paragraph2', $data->paragraph2 ?? '') }}">
+                                            @error('paragraph2')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Title 3 <span class="text-danger">*</span></label>
+                                            <input type="text" name="title3" class="form-control" value="{{ old('title3', $data->title3 ?? '') }}">
+                                            @error('title3')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <div class="mb-3">
+                                            <label class="form-label">Paragraph 3 <span class="text-danger">*</span></label>
+                                            <input type="text" name="paragraph3" class="form-control" value="{{ old('paragraph3', $data->paragraph3 ?? '') }}">
+                                            @error('paragraph3')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Title 4 <span class="text-danger">*</span></label>
+                                            <input type="text" name="title4" class="form-control" value="{{ old('title4', $data->title4 ?? '') }}">
+                                            @error('title4')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <div class="mb-3">
+                                            <label class="form-label">Paragraph 4 <span class="text-danger">*</span></label>
+                                            <input type="text" name="paragraph4" class="form-control" value="{{ old('paragraph4', $data->paragraph4 ?? '') }}">
+                                            @error('paragraph4')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="mb-3">
+                                            <label class="form-label">Upload Image 425*672<span class="text-danger">*</span></label>
+                                            <input type="file" name="image" class="form-control" accept="image/*" onchange="previewImage(event)">
+                                            <small class="text-muted">size up to 500kb. Formats: jpg, png, webp.</small>
+                                            @error('image')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 mb-3 text-center">
+                                        <div class="d-flex justify-content-center">
+                                            <img id="preview-image" src="{{ asset('no-image.png') }}" style="max-height: 200px; border: 1px dashed #ccc; padding: 10px;">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Save Pre Explore</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
+
+@section('scripts')
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('preview-image');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+@endsection
+

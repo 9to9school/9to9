@@ -1,0 +1,25 @@
+img#float1 {
+  position: absolute;
+  top: 0px;
+  display: flex;
+  width: 100px;
+  right: 616px;
+}
+img#float4 {
+  display: flex;
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: -90px;
+  /* transform: rotate(360deg) !important; */
+  left: 521px;
+}
+
+
+Yesterday, we built a hero section with Tailwind + GSAP that had:
+- A wave line animation
+- A hero image
+- Floating SVG blobs animated around the hero image
+- Smooth entrance animations for text and buttons
+
+Let’s continue improving the layout, animations, and maybe add scroll or parallax effects.

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9-to-9 School</title>
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <!--<link rel="stylesheet" href="{{ asset('assets/web/css/contact.css') }}">-->
+ <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .btn-purple{
+        background:purple;
+        color:#fff;
+    }
+
+    .custom-header {
+      padding: 20px;
+      position: relative;
+      z-index: 1000;
+      background:#f4c072;
+    }
+
+    .custom-header img {
+      height: 100px;
+    }
+
+    .header-buttons {
+      gap: 10px;
+    }
+
+    .btn-header {
+      border-radius: 10px;
+      font-weight: 500;
+      padding: 5px 15px;
+    }
+
+    .hamburger {
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      /* position: absolute; */
+      top: 25px;
+      right: 25px;
+      z-index: 1001;
+    }
+
+    /* Overlay Nav */
+    .overlay-nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 999999;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 100px;
+      text-align: center;
+    }
+
+    .overlay-nav a {
+      padding: 10px;
+      text-decoration: none;
+      font-size: 24px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .overlay-nav a:hover {
+      color: #f9c87a;
+    }
+
+    .overlay-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .phone-slider img {
+      max-width: 250px;
+      width: 100%;
+    }
+
+
+.btn-custom {
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: 500;
+    background: #0dcaf0;
+    color: #fff;
+}
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .header-buttons {
+        display: none;
+      }
+    }
+  </style>
+  @yield('css')
+</head>
+<body>
+<!-- Preloader -->
+<!--<div id="preloader">-->
+<!--  <i class="fas fa-spinner fa-spin fa-3x text-blue-500"></i>-->
+<!--</div>-->
+
+<!-- Overlay Navigation -->
+<div id="overlayNav" class="overlay-nav">
+  <a href="javascript:void(0)" class="overlay-close" onclick="closeNav()">&times;</a>
+    <a href="{{url("/")}}" class="hover:text-blue-500 text-orange text-2xl" style="font-size: 25px">Home</a>
+
+      <a href="{{ url('/about-us') }}" class="hover:text-blue-500" style="font-size: 25px">About Us</a>
+  <a href="{{url("/contact-us")}}" class="hover:text-blue-500" style="font-size: 25px">Contact Us</a>
+       <a href="{{url("/pre-school")}}" class="hover:text-blue-500" style="font-size: 25px">Pre-School</a>
+           <a href="{{url("/day-care")}}" class="hover:text-blue-500" style="font-size: 25px">Day-School</a>
+           <a href="{{url("/usp-details")}}" class="hover:text-blue-500" style="font-size: 25px">USP Details</a>
+             <a href="{{url("/events")}}" class="hover:text-blue-500" style="font-size: 25px">Events</a>
+  
+</div>
+
+<!-- Header -->
+
+<header class="custom-header">
+    <div class="container d-flex justify-content-between align-items-center py-3">
+      <!-- logo -->
+      <a href="/" class="navbar-brand p-0">
+        <img src="https://9to9school.com/public/assets/web/images/logo.png" alt="9 to 9 School Logo" height="50">
+      </a>
+  
+      <!-- desktop buttons + hamburger -->
+      <div class="d-none d-md-flex align-items-center">
+        <button class="btn btn-outline-dark btn-header me-2">Talk to Expert</button>
+        <button class="btn btn-info text-white btn-header me-3">Book an Appointment</button>
+        <button class="hamburger btn btn-link p-0" onclick="openNav()">&#9776;</button>
+      </div>
+  
+      <!-- mobile‑only hamburger -->
+      <button class="d-md-none hamburger btn btn-link p-0" onclick="openNav()">&#9776;</button>
+    </div>
+  </header>
+  
+<!-- Main Content -->
+<div class="parent_div">
+  @yield('body')
+</div>
+
+
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Additional Content (e.g., Image) -->
+<div>
+  <img src="{{asset('assets/web/images/home/child.png')}}" alt="Child" class="w-full object-cover" />
+</div>
+
+<!-- Full Page Loader (for route changes) -->
+<div id="full-page-loader" class="fixed inset-0 z-50 flex items-center justify-center bg-white" style="display:none;">
+  <i class="fas fa-spinner fa-spin fa-3x text-blue-500"></i>
+</div>
+
+<!-- Footer -->
+<footer class="bg-white px-5 md:px-8 lg:px-10 py-8">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 place-items-center gap-8">
+    <!-- Logo & Description -->
+    <div>
+      <div class="flex items-center space-x-2">
+        <img src="{{asset('assets/web/images/logo.png')}}" alt="Logo" class="w-10 h-10 rounded-full" />
+      </div>
+      <p class="font-semibold text-sm mt-2">
+        Where every game is a lesson, and every lesson is a game. Our app transforms education into playful games, captivating young minds with interactive fun.
+      </p>
+      <div class="flex space-x-3 mt-4">
+        <button>
+          <img src="{{asset('assets/web/images/playstore.png')}}" alt="Google Play" class="h-10" />
+        </button>
+        <button>
+          <img src="{{asset('assets/web/images/app store.png')}}" alt="App Store" class="h-10" />
+        </button>
+      </div>
+    </div>
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-lg font-bold">Quick links</h3>
+      <ul class="mt-3 space-y-2 font-semibold">
+        <li><a href="#" class="hover:text-black">Home</a></li>
+        <li><a href="#" class="hover:text-black">Games</a></li>
+        <li><a href="#" class="hover:text-black">Subjects</a></li>
+        <li><a href="#" class="hover:text-black">About</a></li>
+      </ul>
+    </div>
+    <!-- Company -->
+    <div>
+      <h3 class="text-lg font-bold">Company</h3>
+      <ul class="mt-3 space-y-2 font-semibold">
+        <li><a href="#" class="hover:text-black">About</a></li>
+        <li><a href="#" class="hover:text-black">Features</a></li>
+        <li><a href="#" class="hover:text-black">Works</a></li>
+        <li><a href="#" class="hover:text-black">Career</a></li>
+      </ul>
+    </div>
+    <!-- Gallery -->
+    <div>
+      <h3 class="text-lg font-bold">Gallery</h3>
+      <div class="flex flex-row grid-cols-3 gap-2 mt-3">
+        <img src="{{asset('assets/web/images/home/gallery1.png')}}" alt="Gallery" class="rounded-lg h-20" style="width: 100px" />
+        <img src="{{asset('assets/web/images/home/gallary2.png')}}" alt="Gallery" class="rounded-lg h-20" style="width: 100px" />
+      </div>
+    </div>
+  </div>
+  <!-- Bottom Section -->
+  <div class="mt-8 border-t border-t-black/20 pt-4 flex flex-col md:flex-row justify-between font-semibold text-sm">
+    <div class="flex space-x-4">
+      <a href="#" class="hover:text-black">Privacy Policy</a>
+      <a href="#" class="hover:text-black">Terms & Conditions</a>
+      <a href="#" class="hover:text-black">Support</a>
+    </div>
+    <p class="mt-4 md:mt-0">&copy; Copyright 2024, All Rights Reserved</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<!--<script src="script.js"></script>-->
+  
+<script>
+  function openNav() {
+    document.getElementById("overlayNav").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("overlayNav").style.width = "0%";
+  }
+</script>
+
+@yield('js')
+</body>
+</html>

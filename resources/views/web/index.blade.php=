@@ -1,0 +1,1433 @@
+@extends('layouts.web')
+@section('css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/web/css/index.css') }}">
+    <style>
+
+
+        .heading{
+            font-size: 40px !important;
+        }
+        .container{
+            width:95% !important;
+        }
+        .pop-image {
+            width: 70px !important;
+            object-fit: cover;
+        }
+
+        .phone {
+            margin-top: -100px;
+        }
+
+        .mySwiper2 .card-body{
+            background: #fff;
+        }
+        .video_thumbnails{
+            height: 600px;
+            width: 100%;
+        }
+
+        .banner_section {
+            //background-image: url(https://9to9school.com/public/assets/web/images/home/hello.png);
+            background-size: cover;
+            background-position: center;
+            padding: 0;
+            background: linear-gradient(180deg, #D7F8FE, #FFFFFF) !important;
+        }
+
+        .collapse {
+            visibility: visible !important;
+        }
+
+        .accordion-item .accordion-header .accordion-button {
+            padding: 10px 20px;
+        }
+        .skill-learn .frame-52 .frame-53{
+            display:block;
+        }
+        .skill-learn .text-6{
+            font-size:24px;
+        }
+        .mySwiper2 .card-body.p-4.text-left {
+            border: 1px solid #ddd;
+            border-radius: 0 0 15px 15px;
+            box-shadow: unset;
+        }
+        .banner_section p{
+        font-size: 16px;
+        text-align: justify;
+        padding: 5px;
+        }
+        .swiper-button-next{
+            display: none;
+        }
+        .swiper-button-prev{
+            display: none;
+        }
+        .journey_today{
+            font-family: "Poppins", sans-serif;
+            font-size: 18px !important;
+            font-weight: 500;
+            color: #000 !important;
+        }
+
+        @media (max-width: 480px) {
+            .heading {
+                font-size: 20px !important;
+            }
+            .apply_download{
+                font-size: 14px !important;
+            }
+
+            .btn-custom {
+                font-size: 10px;
+                padding: 6px 10px;
+            }
+
+            .frame-35 {
+                padding: 20px;
+            }
+            .child-milestones .tab-content h5{
+                font-size: 20px !important;
+            }
+
+            .text-wrapper-26,
+            .text-6 {
+                font-size: 12px;
+                line-height: 18px;
+            }
+
+            .quiz .unlock-two-days-of {
+                font-size: 24px;
+            }
+            .video_thumbnails{
+                height: 100%;
+            }
+            .start_quize{
+                margin-bottom: 25px;
+            }
+            .frame-3 .card-body p{
+                font-size: 15px;
+            }
+
+            .frame-3 .card-body h5 {
+                font-size: 20px;
+            }
+
+            .start-your-child-s {
+                font-size: 28px;
+                line-height: 36px;
+            }
+            .child_group{
+                margin-top: -30px !important;
+            }
+        }
+        .child_group{
+            margin-top: -100px !important;
+        }
+        .stand-apart .card-custom{
+            height: 500px;
+        }
+        .frame-3 .card-body p{
+            font-size: 15px !important;
+        }
+        .style_start_up{
+           padding: 2rem;
+        }
+        @media (max-width: 767px) {
+            .frame-3 .card-body p{
+                line-height: 24px;
+            }
+            .style_start_up{
+                padding: 2rem 1rem;
+            }
+            .btn-custom {
+                font-size: 12px;
+                padding: 8px 12px;
+                font-weight: 500;
+                background: #0dcaf0;
+                color: #fff;
+                font-size: 11px;
+            }
+            .child_group{
+                margin-top: -30px !important;
+            }
+
+            .popular .frame-4 {
+                border-radius: 20px;
+            }
+
+            section.banner_section h1 {
+                font-size: 30px;
+            }
+
+            .banner_section p {
+                font-size: 14px;
+                text-align:center;
+            }
+
+            .skill-learn .text-wrapper-29 {
+                font-size: 20px;
+            }
+
+            .skill-learn .frame-52 {
+                padding: 27px 26px;
+            }
+
+            .skill-learn .text-6 {
+                position: relative;
+                align-self: stretch;
+                font-weight: 400;
+                color: #ffffff;
+                font-size: 13.6px;
+                letter-spacing: 0;
+                line-height: 20.2px;
+            }
+
+            .app-banner .text-wrapper-26{
+                font-size: 16px!important;
+                text-align: center;
+            }
+
+            .app-banner .start-your-child-s {
+
+                width: 100%;
+                margin-top: -1px;
+
+                font-size: 26px !important;
+                letter-spacing: 0;
+                line-height: 30.2px;
+            }
+
+            .quiz .text-wrapper-26 {
+                position: relative;
+                width: 100%;
+            }
+            #faq .text-wrapper-32{
+                font-size: 15px;
+            }
+
+            .frame-3 .card-body h5 {
+                font-size: 24px;
+                line-height: 30px;
+            }
+
+            .popular .frame-4 p {
+                line-height: 0px;
+                font-size: 12px;
+
+            }
+            .stand-apart h2 {
+                font-size: 26px;
+
+            }
+            .stand-apart .col-md-3 {
+                height: 100%;
+            }
+            .heading {
+                font-size: 20px !important;
+                margin-bottom:20px !important;
+            }
+            .events_activities.py-2 h2 {
+                margin-bottom: 0 !important;
+            }
+
+
+            .swiper {
+                padding-bottom: 0;
+            }
+
+            .child-milestones p {
+                font-size: 14px;
+                text-align: justify !important;
+                line-height: unset;
+            }
+
+            .child-milestones .btn-light {
+                padding: 15px;
+            }
+
+            .child-milestones .tab-content .text-wrapper-16 {
+                font-size: 15px;
+            }
+
+            .child-milestones .tab-content .frame-30 {
+                margin: 20px 0;
+            }
+
+            .child-milestones .tab-content .frame-35 {
+                text-align: center;
+                padding: 35px 50px;
+                gap: 0px;
+            }
+
+            .child-milestones .tab-content .text-wrapper-19 {
+                text-align: center !important;
+            }
+            .app-banner .text-wrapper-26{
+                line-height: 26px;
+            }
+            section.app-banner.my-5.py-4 {
+                text-align: center;
+                margin-top:8em !important;
+            }
+
+            .life-skills h2 {
+                font-size: 32px;
+            }
+
+            section.app-banner.my-5.py-4 {
+                margin-bottom: -2em !important;
+            }
+            section.life-skills.my-5 h2 {
+                margin-bottom: 0 !important;
+            }
+
+            .mySwiper2 .card-body.p-4.text-left {
+                border: 1px solid #ddd;
+                border-radius: 0 0 15px 15px;
+                box-shadow: unset;
+                padding: 10px !important;
+            }
+
+            .swiper-wrapper {
+                padding: 0px;
+            }
+
+            .quiz .frame-46 {
+                text-align: left;
+            }
+
+            .quiz .unlock-two-days-of {
+                font-size: 26px;
+                text-align:center;
+                line-height: unset;
+            }
+
+            .mobile_sider{
+              margin-top: 20px !important;
+                /*display: none;*/
+            }
+
+            .quiz .text-wrapper-26 {
+                position: relative;
+                width: 100%;
+                font-size: 16px;
+                text-align:center;
+            }
+            a.btn.btn-info.text-white.px-4.start_quize {
+                display: block;
+            }
+            h2.text-wrapper-25{
+                text-align: center;
+            }
+
+            .skill-learn .text-wrapper-27 {
+                font-size: 32px;
+            }
+            section.py-2.skill-learn h2 {
+                margin: 0 !important;
+            }
+
+            a.btn.text-center.btn-light.fw-semibold.px-4.my-3.py-2.rounded-pill {
+                margin:15px 0 0 0 !important;
+            }
+
+            section#faq {
+                padding: 50px 0 !important;
+            }
+            #faq .text-wrapper-31 {
+                font-size: 32px;
+                line-height:30px
+            }
+
+            .faq-category.text-wrapper-32 {
+                margin: 30px 0 0;
+            }
+
+            button.accordion-button {
+                padding: 16px;
+                font-size: 14px;
+            }
+
+            .accordion-button:not(.collapsed)::after {
+                background-image: var(--bs-accordion-btn-active-icon);
+                transform: var(--bs-accordion-btn-icon-transform);
+                background-size: 75%;
+            }
+
+            .life-skills img{
+
+            }
+
+            .popular .frame-4 img {
+                position: relative;
+                width: 65px;
+                height: 90px;
+                margin: 0 auto;
+                padding: 10px;
+                object-fit: contain;
+            }
+
+            .swiper-button-next:after,
+            .swiper-button-prev:after {
+                background: #fafafa;
+                padding: 10px;
+                font-size: 12px;
+                border-radius: 50%;
+            }
+
+            .events_activities .card-body h6,
+            .events_activities .card-body p {
+                font-family: "Poppins", sans-serif;
+            }
+
+            .events_activities .card-body p {
+                font-size: 14px;
+                text-align: center;
+            }
+
+            .events_activities .card-body h6 {
+                font-size: 22px;
+            }
+
+            .child-milestones .btn-purple,
+            .child-milestones {
+                font-size: 15px
+            }
+
+            .child-milestones .btn-light {
+                font-size: 12px
+            }
+            .card-title{
+                font-size: 18px;
+            }
+
+            h2.start-your-child-s.heading{
+                margin-top:2em;
+            }
+
+            .accordion-button::after{
+                background-size:14px !important;
+                transform:unset;
+            }
+
+            .swiper-pagination.mt-3.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
+                bottom:-5px;
+            }
+        }
+    </style>
+@stop
+
+@section('body')
+    <!-- Main Section -->
+    <section class="banner_section" id="main-content">
+        <div class="container mx-auto  md:py-2">
+            <div class="row p-3 align-items-center">
+                <!-- Left content -->
+                <div class="col-md-6 text-center text-md-start">
+                    <span id="desktopBadge" class="badge bg-white text-dark mb-2 p-2 rounded-full ">
+                        Smart learning &, playful beginnings!</span>
+                    <span id="mobileBadge" class="badge bg-white text-dark mb-2 p-2 rounded-full" style="display: none;">
+                        A smarter way to start<br>your child’s learning journey
+                    </span>
+                    <h1 class="fw-bold">Welcome to the<br><span class="text-info">9 TO 9 School</span></h1>
+                    <p>
+
+                        At 9to9 Preschool, we tailor learning to your child’s rhythm offering expert lessons, playful activities, and flexible hours from 9 AM to 9 PM. Learning made fun and flexible!
+                    </p>
+                    <div class="d-flex gap-2 justify-content-center justify-content-md-start mt-3">
+                        <a href="#" class="btn btn-primary btn-custom">Apply Today</a>
+                        <a href="#" class="btn btn-outline-info btn-custom">Download App <span>&#x25BC;</span></a>
+                    </div>
+                </div>
+
+                <style>
+                    .prototype .swiper-wrapper img {
+                        width: 45%;
+                        /* height: 600px; */
+
+                    }
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                </style>
+                <!-- Right phone slider -->
+                <div class="col-md-6 text-center mt-5  z-2 mobile_sider">
+                    <section class="prototype swiper-container0  w-full overflow-hidden pb-4">
+                        <div class="swiper-wrapper">
+                            <img src="assets/images/1.png"
+                                alt="Mobile App UI" class="swiper-slide" />
+                            <img src="assets/images/2.png"
+                                alt="Mobile App UI" class="swiper-slide" />
+                            <img src="assets/images/3.png"
+                                alt="Mobile App UI" class="swiper-slide" />
+                            <img src="assets/images/4.png"
+                                alt="Mobile App UI" class="swiper-slide" />
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <style>
+                    .child_group{
+                        /*position: relative;margin-top: -252px;overflow-x: hidden;*/
+                        position: relative;margin-top: 0px;overflow-x: hidden;
+                    }
+                </style>
+                <div style="" class="child_group">
+                    <img src="https://demo.thelittlehands.in/assets/web/images/home/child.png" alt="Child"
+                         class="w-full object-cover">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container mx-auto py-2">
+            <div class="row justify-content-center text-center">
+                <!-- Preschool Card -->
+                @foreach($categories as $category)
+                    <div class="col-md-4 offset-md-1 p-3">
+                        <div class="card text-center frame-3 p-0">
+                            <a href="{{ url($category->category_url) }}">
+                                <img src="{!! asset($category->image) !!}" class="card-img-top rounded-top w-100 img-slider"
+                                    alt="{{$category->category_name}}">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-semibold">{{$category->category_name}}</h5>
+                                    <p class="card-text text-muted">{{$category->content}}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+
+                <!-- Day Care Card -->
+{{--                <div class="col-md-4 offset-md-1 p-3">--}}
+{{--                    <div class="card text-center frame-3 p-0">--}}
+{{--                        <a href="{{ url('day-care') }}">--}}
+{{--                            <img src="{!! asset('assets/home/day care.webp') !!}" class="card-img-top rounded-top w-100 img-slider"--}}
+{{--                                alt="Day care">--}}
+{{--                            <div class="card-body">--}}
+{{--                                <h5 class="card-title fw-semibold">Day care</h5>--}}
+{{--                                <p class="card-text text-muted">Our daycare program provides a safe, loving environment for your child to learn, play, and grow.</p>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+            </div>
+        </div> <!-- closing for container -->
+    </section>
+
+    <!-- Popular Age Group -->
+    <div class="stand-apart popular container mx-auto">
+        <h2 class="heading mb-3">Popular for you</h2>
+        <div class="row justify-content-center text-center">
+            <!-- Each Age Group Item -->
+            @foreach($populars as $popular)
+            <div class="col-6 col-md-3 mb-4">
+                <a href="{{url('popular-for-you')}}" class="text-decoration-none text-dark">
+                    <div class="frame-4">
+                        <img src="{!! asset($popular->image) !!}" class="img-fluid mb-2 pop-image" alt="{{$popular->title}}">
+                        <p class="mb-0 fw-medium">{{$popular->title}}</p>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+
+{{--            <div class="col-6 col-md-3 mb-4">--}}
+{{--                <a href="{{url('popular-for-you')}}" class="text-decoration-none text-dark">--}}
+{{--                    <div class="frame-4">--}}
+{{--                        <img src="{!! asset('assets/web/images/home/kid2.png') !!}" class="img-fluid mb-2 pop-image" alt="3-4 years">--}}
+{{--                        <p class="mb-0 fw-medium">3-4 Years</p>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--            </div>--}}
+
+{{--            <div class="col-6 col-md-3 mb-4">--}}
+{{--                <a href="{{url('popular-for-you')}}" class="text-decoration-none text-dark">--}}
+{{--                    <div class="frame-4">--}}
+{{--                        <img src="{!! asset('assets/web/images/home/kid1.png') !!}" class="img-fluid mb-2 pop-image" alt="4-5 years">--}}
+{{--                        <p class="mb-0 fw-medium">4-5 Years</p>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--            </div>--}}
+
+{{--            <div class="col-6 col-md-3 mb-4">--}}
+{{--                <a href="{{url('popular-for-you')}}" class="text-decoration-none text-dark">--}}
+{{--                    <div class="frame-4">--}}
+{{--                        <img src="{!! asset('assets/web/images/home/kid2.png') !!}" class="img-fluid mb-2 pop-image" alt="5-6 years">--}}
+{{--                        <p class="mb-0 fw-medium">5-6 Years</p>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--            </div>--}}
+        </div>
+
+    </div>
+
+    <!-- Popular Age Group -->
+    {{--<div class="mt-10 popular container mx-auto px-4">
+        <h2 class="text-2xl font-semibold text-center mb-8">Popular for you</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-40 place-items-center">
+
+            <!-- Age Group Item -->
+            <div class="w-full  aspect-square bg-white rounded-xl shadow-md flex flex-col items-center justify-center p-4">
+                <img src="{!! asset('assets/web/images/home/kid1.png') !!}" class=" object-contain mb-2" alt="2-3 years">
+                <p class="text-center font-medium text-sm">2-3 Years</p>
+            </div>
+
+            <!-- Age Group Item -->
+            <div class="w-full  aspect-square bg-white rounded-xl shadow-md flex flex-col items-center justify-center p-4">
+                <img src="{!! asset('assets/web/images/home/kid2.png') !!}" class=" object-contain mb-2" alt="3-4 years">
+                <p class="text-center font-medium text-sm">3-4 Years</p>
+            </div>
+
+            <!-- Age Group Item -->
+            <div class="w-full <!--max-w-[150px]--> aspect-square bg-white rounded-xl shadow-md flex flex-col items-center justify-center p-4">
+                <img src="{!! asset('assets/web/images/home/kid1.png') !!}" class=" object-contain mb-2" alt="4-5 years">
+                <p class="text-center font-medium text-sm">4-5 Years</p>
+            </div>
+
+            <!-- Age Group Item -->
+            <div class="w-full  aspect-square bg-white rounded-xl shadow-md flex flex-col items-center justify-center p-4">
+                <img src="{!! asset('assets/web/images/home/kid2.png') !!}" class=" object-contain mb-2" alt="5-6 years">
+                <p class="text-center font-medium text-sm">5-6 Years</p>
+            </div>
+
+        </div>
+    </div>--}}
+
+
+    <section class="stand-apart">
+        <div class="container mx-auto py-2">
+            <h2 class="heading mb-3">Why We Stand Apart</h2>
+            <div class="row g-4">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Card 1 -->
+                        @foreach($standApart as $stand)
+                        <div class="swiper-slide">
+                            <div class="card card-custom">
+                                <img src="{!! asset($stand->image) !!}" class="card-img" alt="...">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">{{$stand->title}}</h5>
+                                    <p class="card-text">{{$stand->description}}</p>
+                                    <a href="{{ url('usp-details') }}" class="btn btn-purple mt-2">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        <!-- Card 2 -->
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card card-custom">--}}
+{{--                                <img src="{!! asset('assets/home/the right teracher.webp') !!}" class="card-img" alt="...">--}}
+{{--                                <div class="card-img-overlay">--}}
+{{--                                    <h5 class="card-title">The Right Teacher for Your Child!</h5>--}}
+{{--                                    <p class="card-text">Quality and personalized learning experience</p>--}}
+{{--                                    <a href="{{ url('usp-details') }}" class="btn btn-yellow mt-2">Find a Teacher</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!-- Card 3 -->--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card card-custom">--}}
+{{--                                <img src="{!! asset('assets/home/pay per day.webp') !!}" class="card-img" alt="...">--}}
+{{--                                <div class="card-img-overlay">--}}
+{{--                                    <h5 class="card-title">No Extra Charges, Pay as You Go!</h5>--}}
+{{--                                    <p class="card-text">Only pay for what you use</p>--}}
+{{--                                    <a href="{{ url('usp-details') }}" class="btn btn-green mt-2">Learn More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!-- Card 4 -->--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card card-custom">--}}
+{{--                                <img src="{!! asset('assets/web/images/home/popular4.jpeg') !!}" class="card-img" alt="...">--}}
+{{--                                <div class="card-img-overlay">--}}
+{{--                                    <h5 class="card-title">Progress Tracking</h5>--}}
+{{--                                    <p class="card-text">Track your child’s learning progress easily</p>--}}
+{{--                                    <a href="{{ url('usp-details') }}" class="btn btn-teal mt-2">Learn More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!-- Card 5 -->--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card card-custom">--}}
+{{--                                <img src="{!! asset('assets/home/daily activity.webp') !!}" class="card-img" alt="...">--}}
+{{--                                <div class="card-img-overlay">--}}
+{{--                                    <h5 class="fw-bold mb-2">Daily Activity Reports</h5>--}}
+{{--                                    <p>Get daily insights on your child’s meals, sleep, and learning progress.</p>--}}
+{{--                                    <a href="{{ url('usp-details') }}" class="btn btn-purple mt-2">Learn More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!-- Card 6 -->--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card card-custom">--}}
+{{--                                <img src="{!! asset('assets/home/Real time update photo.jpg 1.webp') !!}" class="card-img" alt="...">--}}
+{{--                                <div class="card-img-overlay">--}}
+{{--                                    <h5 class="fw-bold mb-2">Real-Time Updates & Photos</h5>--}}
+{{--                                    <p>Stay connected with live photos, videos, and activity updates.</p>--}}
+{{--                                    <a href="{{ url('usp-details') }}" class="btn btn-warning mt-2">Learn More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!-- Card 7 -->--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card card-custom">--}}
+{{--                                <img src="{!! asset('assets/home/personalized.webp') !!}" class="card-img" alt="...">--}}
+{{--                                <div class="card-img-overlay">--}}
+{{--                                    <h5 class="fw-bold mb-2">Personalised Learning Plans</h5>--}}
+{{--                                    <p>Track and support your child’s growth with tailored learning plans.</p>--}}
+{{--                                    <a href="{{ url('usp-details') }}" class="btn btn-success mt-2">Learn More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!-- Card 8 -->--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card card-custom">--}}
+{{--                                <img src="{!! asset('assets/home/progress.webp') !!}" class="card-img" alt="...">--}}
+{{--                                <div class="card-img-overlay">--}}
+{{--                                    <h5 class="fw-bold mb-2">Health & Wellness Tracking</h5>--}}
+{{--                                    <p>Easily monitor health, medication, and allergies in one place.</p>--}}
+{{--                                    <a href="{{ url('usp-details') }}" class="btn btn-danger mt-2">Learn More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!-- Card 9 -->--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <div class="card card-custom">--}}
+{{--                                <img src="{!! asset('assets/web/images/home/popular4.jpeg') !!}" class="card-img" alt="...">--}}
+{{--                                <div class="card-img-overlay">--}}
+{{--                                    <h5 class="fw-bold mb-2">Secure Digital Record-Keeping</h5>--}}
+{{--                                    <p>Access and manage all important records anytime, anywhere.</p>--}}
+{{--                                    <a href="{{ url('usp-details') }}" class="btn btn-purple mt-2">Learn More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- EVENTS & ACTIVITIES -->
+    <div class="events_activities py-2">
+        <div class="container mx-auto">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="heading md:mb-5 lg:mb-5">Events & Activities</h2>
+                <a href="#" class="text-primary text-decoration-none">View All</a>
+            </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    @foreach($events as $event)
+                    <div class="swiper-slide">
+                        <div class="card p-0">
+                            <img src="{!! asset($event->image) !!}"
+                                 class="card-img-top" alt="Storytelling">
+                            <div class="card-body text-left">
+                                <h6 class="fw-semibold">{{$event->event_name}}</h6>
+                                <p class="">{{$event->description}}</p>
+                                <p class="text-muted small mb-2">⏱ {{$event->duration}} • 👧 {{$event->age}}</p>
+                                <a href="https://calendly.com/9to9schools/30min" target="_blank" class="btn btn-sm btn-purple">Book a Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+{{--                    <!-- Slide 2 -->--}}
+{{--                    <div class="swiper-slide">--}}
+{{--                        <div class="card p-0">--}}
+{{--                            <img src="{!! asset('assets/home/art & craft.webp') !!}" class="card-img-top" alt="Art & Craft">--}}
+{{--                            <div class="card-body p-3 text-center">--}}
+{{--                                <h6 class="fw-semibold">Art & Craft </h6>--}}
+{{--                                <p class="">Boost creativity with fun and hands-on activities! </p>--}}
+{{--                                <p class="text-muted small mb-2">⏱ 45 mins • 👧 Age 3-6</p>--}}
+{{--                                <a href="https://calendly.com/9to9schools/30min" target="_blank" class="btn btn-sm btn-purple">Book a Section</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <!-- Slide 3 -->--}}
+{{--                    <div class="swiper-slide">--}}
+{{--                        <div class="card p-0">--}}
+{{--                            <img src="{!! asset('assets/home/music & move.webp') !!}"--}}
+{{--                                 class="card-img-top" alt="Music & Movement">--}}
+{{--                            <div class="card-body p-3 text-center">--}}
+{{--                                <h6 class="fw-semibold">Music & Movement</h6>--}}
+{{--                                <p class="">Dance rhythm and body coordination in a lively session!</p>--}}
+{{--                                <p class="text-muted small mb-2">⏱ 45 mins • 👧 Age 3-6</p>--}}
+{{--                                <a href="https://calendly.com/9to9schools/30min" target="_blank" class="btn btn-sm btn-purple">Book a Section</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <!-- Slide 4 -->--}}
+{{--                    <div class="swiper-slide">--}}
+{{--                        <div class="card p-0">--}}
+{{--                            <img src="{!! asset('assets/home/nature.webp') !!}"--}}
+{{--                                 class="card-img-top" alt="Nature Exploration">--}}
+{{--                            <div class="card-body p-3 text-center">--}}
+{{--                                <h6 class="fw-semibold">Nature Exploration</h6>--}}
+{{--                                <p class="">A closer look at the wonders of the nature, natural world, indoors & outdoors</p>--}}
+{{--                                <p class="text-muted small mb-2">⏱ 45 mins • 👧 Age 3-6</p>--}}
+{{--                                <a href="https://calendly.com/9to9schools/30min" target="_blank" class="btn btn-sm btn-purple">Book a Section</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+                </div>
+
+                <!-- Swiper Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Child Milestones -->
+    <section class="child-milestones py-2">
+        <div class="container mx-auto">
+            <h2 class="heading text-center mb-3">Child Learning Milestones</h2>
+            <p class="text-center text-muted mb-4">Our curriculum is carefully designed to support key developmental
+                milestones at each age. See how we nurture your child's growth through targeted learning experiences.</p>
+            <div class="d-flex justify-content-center mb-4">
+                <div class="container my-4">
+                    <ul class=" grid lg:grid-cols-4 grid-cols-2 m-0 nav nav-pills row row-cols-2 row-cols-md-auto g-2 justify-content-center"
+                        id="milestoneTabs" role="tablist">
+                        <li class="nav-item text-center w-full" role="presentation">
+                            <button class="nav-link btn-light active w-100" id="three-tab" data-bs-toggle="pill"
+                                data-bs-target="#three" type="button" role="tab">3 Months</button>
+                        </li>
+                        <li class="nav-item text-center w-full" role="presentation">
+                            <button class="nav-link btn-light w-100" id="six-tab" data-bs-toggle="pill"
+                                data-bs-target="#six" type="button" role="tab">6 Months</button>
+                        </li>
+                        <li class="nav-item text-center w-full" role="presentation">
+                            <button class="nav-link btn-light w-100" id="nine-tab" data-bs-toggle="pill"
+                                data-bs-target="#nine" type="button" role="tab">9 Months</button>
+                        </li>
+                        <li class="nav-item text-center w-full" role="presentation">
+                            <button class="nav-link btn-light w-100" id="twelve-tab" data-bs-toggle="pill"
+                                data-bs-target="#twelve" type="button" role="tab">12 Months</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="milestoneTabsContent">
+                <!-- 3 Months -->
+                <div class="tab-pane fade show active" id="three" role="tabpanel">
+                    <h5 class="fw-semibold text-center mb-2">Early Sensory Development</h5>
+                    <p class="text-center text-muted mb-4">Focusing on sensory stimulation and basic motor skills
+                        development.</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-7">
+                            <div class="frame-30">
+                                <h6 class="fw-bold">3 Months Milestone</h6>
+                                <p>In the first three months, children develop foundational skills through guided play
+                                    and
+                                    sensory activities.</p>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">1</span></div>
+                                        <span class="text-wrapper-16">Begins to follow faces and objects with eyes</span>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">2</span></div>
+                                        <span class="text-wrapper-16">Smiles at familiar voices and sounds</span>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">3</span></div>
+                                        <span class="text-wrapper-16">Starts to lift head during tummy time</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="frame-35">
+                                <h4 class="text-wrapper-18">Program Fee</h4>
+                                <p class="text-wrapper-19">₹2500</p>
+                                <p class="text-wrapper-18">per month<br></p>
+                                <p class="text-wrapper-18" style="color: #000"><b>₹27000</b></p>
+                                <p class="text-wrapper-18">annual payment (save 10%)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other tabs (optional content) -->
+                <div class="tab-pane fade" id="six" role="tabpanel">
+                    <h5 class="fw-semibold text-center mb-4">Early Sensory Development</h5>
+                    <p class="text-center text-muted mb-4">Focusing on sensory stimulation and basic motor skills
+                        development.</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-7">
+                            <div class="frame-30">
+                                <h6 class="fw-bold">6 Months Milestone</h6>
+                                <p>In the first three months, children develop foundational skills through guided play
+                                    and
+                                    sensory activities.</p>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">1</span></div>
+                                        <span class="text-wrapper-16">Rolls over both ways and begins to sit with support</span>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">2</span></div>
+                                        <span class="text-wrapper-16"> Responds to name and familiar voices</span>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">3</span></div>
+                                        <span class="text-wrapper-16">Explores with hands and mouth—grabs toys and reaches out</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="frame-35">
+                                <h4 class="text-wrapper-18">Program Fee</h4>
+                                <p class="text-wrapper-19">₹2500</p>
+                                <p class="text-wrapper-18">per month<br></p>
+                                <p class="text-wrapper-18" style="color: #000"><b>₹27000</b></p>
+                                <p class="text-wrapper-18">annual payment (save 10%)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nine" role="tabpanel">
+                    <h5 class="fw-semibold text-center mb-4">Early Sensory Development</h5>
+                    <p class="text-center text-muted mb-4">Focusing on sensory stimulation and basic motor skills
+                        development.</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-7">
+                            <div class="frame-30">
+                                <h6 class="fw-bold">9 Months Milestone</h6>
+                                <p>In the first three months, children develop foundational skills through guided play
+                                    and
+                                    sensory activities.</p>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">1</span></div>
+                                        <span class="text-wrapper-16">Crawls or begins to scoot around</span>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">2</span></div>
+                                        <span class="text-wrapper-16">Understands “no” and simple gestures</span>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">3</span></div>
+                                        <span class="text-wrapper-16"> Babbles with different sounds</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="frame-35">
+                                <h4 class="text-wrapper-18">Program Fee</h4>
+                                <p class="text-wrapper-19">₹2500</p>
+                                <p class="text-wrapper-18">per month<br></p>
+                                <p class="text-wrapper-18" style="color: #000"><b>₹27000</b></p>
+                                <p class="text-wrapper-18">annual payment (save 10%)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="twelve" role="tabpanel">
+                    <h5 class="fw-semibold text-center mb-4">Early Sensory Development</h5>
+                    <p class="text-center text-muted mb-4">Focusing on sensory stimulation and basic motor skills
+                        development.</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-7">
+                            <div class="frame-30">
+                                <h6 class="fw-bold">12 Months Milestone</h6>
+                                <p>In the first three months, children develop foundational skills through guided play
+                                    and
+                                    sensory activities.</p>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">1</span></div>
+                                        <span class="text-wrapper-16"> Stands or walks with support</span>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">2</span></div>
+                                        <span class="text-wrapper-16">Says basic words like “mama” or “bye”</span>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="frame-34"><span class="text-wrapper-15">3</span></div>
+                                        <span class="text-wrapper-16">Shows curiosity—points, imitates, and explores actively</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="frame-35">
+                                <h4 class="text-wrapper-18">Program Fee</h4>
+                                <p class="text-wrapper-19">₹2500</p>
+                                <p class="text-wrapper-18">per month<br></p>
+                                <p class="text-wrapper-18" style="color: #000"><b>₹27000</b></p>
+                                <p class="text-wrapper-18">annual payment (save 10%)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Download App section -->
+
+{{--    <main class="px-10 py-15">--}}
+{{--        <div class="bg-gray-200 flex flex-col lg:flex-row items-start lg:items-center justify-center gap-10 px-2 lg:px-10 py-2 ">--}}
+{{--            <div class="w-full lg:w-1/2">--}}
+{{--                <h1 class="text-3xl lg:text-5xl font-bold">--}}
+{{--                    Start your <span class="text-cyan-400">Child's learning</span> journey Today--}}
+{{--                </h1>--}}
+
+{{--                <p class="font-semibold mt-5">--}}
+{{--                    Discover the magic of 9 to 9 School in just a few simple--}}
+{{--                    steps! Download the app and unlock a world where--}}
+{{--                    learning meets play. All designed to captivate young--}}
+{{--                    minds and make education an exciting journey.--}}
+{{--                </p>--}}
+
+{{--                <div class="mt-8 flex items-center gap-5">--}}
+{{--                    <button class="w-32 h-10 rounded-md cursor-pointer">--}}
+{{--                        <img src="{!! asset("assets/web/images/home/phone2.png") !!}" alt="Play Store" class="size-full object-cover rounded-md">--}}
+{{--                    </button>--}}
+{{--                    <button class="w-32 h-10 rounded-md cursor-pointer">--}}
+{{--                        <img src="./assets/app store.png" alt="App Store" class="size-full object-cover rounded-md">--}}
+{{--                    </button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <div class="w-full lg:w-1/2 flex items-center justify-center">--}}
+{{--                <img src="{!! asset('assets/web/images/home/phone2.png') !!}" alt="Phone" class="max-w-full object-cover">--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </main>--}}
+
+
+
+
+    <section class="app-banner my-5 py-4" >
+        <div class="container mx-auto" style="background-color: #eaf8ff;">
+            <div class="row align-items-center style_start_up">
+                <div class="col-md-5 text-center order-md-last">
+                    <img src="{{asset($child_learning->image)}}" class="img-fluid phone" alt="App Preview">
+                </div>
+                <div class="col-md-7 order-md-first">
+                    <h2 class="start-your-child-s heading">
+                        <span class="text-wrapper-40" style="font-weight: 800" >{{$child_learning->heading}}</span>
+{{--                        <span class="text-wrapper-41" style="font-weight: 800"> Child's Learning</span>--}}
+{{--                        <br/>--}}
+{{--                        <span class="text-wrapper-40" style="font-weight: 800"> Journey Today</span>--}}
+                    </h2>
+                    <p class="text-muted text-wrapper-26 mt-2 journey_today">{{$child_learning->description}}</p>
+                    <div class="d-flex  gap-3 mt-3">
+                        <a href="#">
+                            <img src="{{asset($child_learning->app_image1)}}"
+                                 alt="Google Play" style="height:40px;"></a>
+                        <a href="#"><img src="{{asset($child_learning->app_image2)}}"
+                                         alt="App Store" style="height:40px;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- life skills hack -->
+    <section class="life-skills my-5">
+        <div class="container mx-auto">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold heading mb-0">Life Skills Hacks</h2>
+                <a href="{{ url('life-skills') }}" class="text-primary text-decoration-none">View All</a>
+            </div>
+            <!-- Swiper -->
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="card shadow-md p-0 border-0 rounded-4">
+                            <img src="{!! asset('assets/home/Tidy-Up Time Song.webp') !!}" class="card-img-top" alt="Packing Bag">
+                            <div class="card-body p-4 text-left">
+                                <h6 class="fw-bold text-left">Tidy-Up Time Song</h6>
+                                <p class="text-muted mt-2 mb-3 text-left small">
+                                    Turn cleanup into a game by playing a short “tidy-up” song. The music adds a timer-like challenge and makes organising toys feel fun and not forced.
+                                </p>
+                                <a href="{{ url('/life-skills') }}" class="text-left text-primary underline fw-semibold">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="card shadow-md p-0 border-0 rounded-4">
+                            <img src="{!! asset('assets/home/snack.webp') !!}" class="card-img-top" alt="Packing Bag">
+                            <div class="card-body p-4 text-left">
+                                <h6 class="fw-bold text-left">Snack Station Independence</h6>
+                                <p class="text-muted small mt-2 mb-3 text-left">
+                                    Create a low shelf or bin with pre-packed, parent-approved snacks. Kids get to choose their own snack, teaching decision-making and independence.
+                                </p>
+                                <a href="{{ url('/life-skills') }}" class="text-left text-primary underline fw-semibold">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="card shadow-md p-0 border-0 rounded-3">
+                            <img src="{!! asset('assets/home/left right.webp') !!}" class="card-img-top" alt="Packing Bag">
+                            <div class="card-body p-4 text-left">
+                                <h6 class="fw-bold text-left">Learning Left & Right with Hands</h6>
+                                <p class="text-muted text-left mt-2 mb-3 small">
+                                    Teach “left” by showing them the L shape their left hand makes when holding up both hands. It’s a quick trick they’ll remember every time!
+                                </p>
+                                <a href="{{ url('/life-skills') }}" class="text-left text-primary underline fw-semibold">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="card shadow-md p-0 border-0 rounded-4">
+                            <img src="{!! asset('assets/home/handwash.webp') !!}" class="card-img-top" alt="Packing Bag">
+                            <div class="card-body p-4 text-left">
+                                <h6 class="fw-bold text-left">Teach Handwashing with a Song</h6>
+                                <p class="text-muted small mt-2 mb-3 text-left">
+                                    Pick a favourite 20-second tune (like the chorus of a nursery rhyme) and sing it while washing hands. It teaches timing + hygiene in a way that sticks!
+                                </p>
+                                <a href="{{ url('/life-skills') }}" class="text-left text-primary underline fw-semibold">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide">
+                        <div class="card shadow-md p-0 border-0 rounded-4">
+                            <img src="{!! asset('assets/home/school bah.webp') !!}" class="card-img-top" alt="Packing Bag">
+                            <div class="card-body p-4 text-left">
+                                <h6 class="fw-bold text-left">Packing School Bag</h6>
+                                <p class="text-muted small mt-2 mb-3 text-left">
+                                    Learn how to pack essentials & stay organized for school like your student ID, bus pass, or a specific pen, should be in an easily reachable pocket.
+                                </p>
+                                <a href="{{ url('/life-skills') }}" class="text-left text-primary underline fw-semibold">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination mt-3"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Download App section -->
+    <section class="quiz py-2 bg-light1">
+        <div class="container mx-auto" style="background-color: #fef5ef;">
+            <div class="row align-items-center p-3 p-md-5">
+                <!-- Image Section -->
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="{{asset($quizContents->image)}}" class="img-fluid">
+                </div>
+                <!-- Text Section -->
+                <div class="col-md-8">
+                    <h2 class="text-wrapper-25">{{$quizContents->heading}}</h2>
+                    <div class="frame-46 mb-3">
+                        <h3 class="unlock-two-days-of">{{$quizContents->sub_heading}}</h3>
+                        <p class="text-wrapper-26" style="font-family:'Poppins', sans-serif;">
+                            {{$quizContents->description}}
+                        </p>
+                    </div>
+                    <a href="{{url('quiz')}}" class="btn btn-info text-white px-4 start_quize" style="padding: 10px">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-2 skill-learn">
+        <div class="container mx-auto">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold heading mb-0">Skill Learning</h2>
+                <a href="#" class="text-primary text-decoration-none">View All</a>
+            </div>
+            <div class="row">
+                <!-- Right Section: Skill Learning -->
+                <div class="col-md-12">
+                    <!-- Video Thumbnail with Play Button -->
+                    <div class="position-relative mb-4">
+                        <img src="https://content.instructables.com/FXB/78JL/IL2C7BIP/FXB78JLIL2C7BIP.jpg?auto=webp&fit=bounds&frame=1&height=1024&width=1024auto=webp&frame=1&height=150"
+                            class="img-fluid rounded video_thumbnails" alt="Video Thumbnail">
+                        <button class="btn btn-danger rounded-circle position-absolute top-50 start-50 translate-middle"
+                            style="width: 48px; height: 48px;">
+                            <i class="bi bi-play-fill fs-4 text-white"></i>
+                        </button>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="d-flex justify-content-center gap-3 mb-4">
+                        <a href="#" class="btn px-4 py-2 fw-semibold text-white "
+                            style="background-color: #4b1c74; border-radius: 8px;width: 170px;height: 50px;align-items: center;justify-content: center;display: flex">Watch</a>
+                        <a href="#" class="btn px-4 py-2 fw-semibold text-white apply_download"
+                            style="background-color: #4b1c74; border-radius: 8px;width: 170px;height: 50px;align-items: center;justify-content: center;display: flex"">Download App</a>
+                    </div>
+
+                    <!-- Gradient CTA Box -->
+                    <div class="frame-52 text-center  items-center justify-center mt-5 mb-5">
+                        <div class="frame-53 text-center">
+                            <h2 class="text-wrapper-29 text-center">{{$visitBookings->title}}</h2>
+                            <p class="text-6">
+                               {{$visitBookings->description}}
+                            </p>
+                        </div>
+                        <a href="#" class="btn text-center btn-light fw-semibold px-4 my-3 py-2 rounded-pill">Book a
+                            Visit →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="faq" class="py-2" style="background-color: #f6f6f6">
+        <div class="container my-md-5 my-lg-5 my-0 mx-auto">
+            <h2 class="text-center text-wrapper-31 heading frequently">Frequently Asked Questions</h2>
+            @foreach ($faq_categories as $category)
+                <div class="faq-category text-wrapper-32 flex">
+{{--                    <img class="faq-icon" src="{{ asset('assets/web/images/home/' . strtolower(str_replace(' ', '', $category->name)) . '.svg') }}" alt="">--}}
+                    {{ $category->name }}
+                </div>
+
+                <div class="accordion p-3" id="faqCategory{{ $category->id }}">
+                    @if (isset($faqs[$category->id]))
+                        @foreach ($faqs[$category->id] as $key => $faq)
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq{{ $faq->id }}">
+                                        {{ $faq->name }}
+                                    </button>
+                                </h2>
+                                <div id="faq{{ $faq->id }}" class="accordion-collapse collapse" data-bs-parent="#faqCategory{{ $category->id }}">
+                                    <div class="accordion-body">
+                                        {{ $faq->description }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <p>No FAQs available under this category.</p>
+                    @endif
+                </div>
+            @endforeach
+
+        <!-- Admissions -->
+{{--            <div class="faq-category text-wrapper-32 flex">--}}
+{{--                <img class="faq-icon" src="{!! asset('assets/web/images/home/addmision.svg') !!}" alt="" >Admissions--}}
+{{--            </div>--}}
+{{--            <div class="accordion p-3" id="admissionsFaq">--}}
+{{--                <div class="accordion-item">--}}
+{{--                    <h2 class="accordion-header">--}}
+{{--                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq1">--}}
+{{--                            What are the admission requirements?--}}
+{{--                        </button>--}}
+{{--                    </h2>--}}
+{{--                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#admissionsFaq">--}}
+{{--                        <div class="accordion-body">You need to submit your transcripts, ID proof, and application form.--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="accordion-item">--}}
+{{--                    <h2 class="accordion-header">--}}
+{{--                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">--}}
+{{--                            When does the admission process start?--}}
+{{--                        </button>--}}
+{{--                    </h2>--}}
+{{--                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#admissionsFaq">--}}
+{{--                        <div class="accordion-body">Admissions typically start in March every year.</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <!-- Fees & Payment -->--}}
+{{--            <div class="faq-category text-wrapper-32 flex">--}}
+{{--                <img class="faq-icon" src="{!! asset('assets/web/images/home/rupee.svg') !!}" alt="" > Fees & Payment--}}
+{{--            </div>--}}
+{{--            <div class="accordion p-3" id="feesFaq">--}}
+{{--                <div class="accordion-item">--}}
+{{--                    <h2 class="accordion-header">--}}
+{{--                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">--}}
+{{--                            What are the tuition fees?--}}
+{{--                        </button>--}}
+{{--                    </h2>--}}
+{{--                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#feesFaq">--}}
+{{--                        <div class="accordion-body">Tuition fees depend on the course you select. Refer to the brochure.--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="accordion-item">--}}
+{{--                    <h2 class="accordion-header">--}}
+{{--                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">--}}
+{{--                            Are there any scholarships available?--}}
+{{--                        </button>--}}
+{{--                    </h2>--}}
+{{--                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#feesFaq">--}}
+{{--                        <div class="accordion-body">Yes, we offer merit-based and need-based scholarships.</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <!-- Curriculum -->--}}
+{{--            <div class="faq-category text-wrapper-32 flex">--}}
+{{--                <img class="faq-icon" src="{!! asset('assets/web/images/home/curriculum.svg') !!}" alt="" > Curriculum--}}
+{{--            </div>--}}
+{{--            <div class="accordion p-3" id="curriculumFaq">--}}
+{{--                <div class="accordion-item">--}}
+{{--                    <h2 class="accordion-header">--}}
+{{--                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">--}}
+{{--                            What curriculum do you follow?--}}
+{{--                        </button>--}}
+{{--                    </h2>--}}
+{{--                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#curriculumFaq">--}}
+{{--                        <div class="accordion-body">We follow the CBSE/ICSE curriculum depending on the grade level.</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="accordion-item">--}}
+{{--                    <h2 class="accordion-header">--}}
+{{--                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq6">--}}
+{{--                            What are the class sizes?--}}
+{{--                        </button>--}}
+{{--                    </h2>--}}
+{{--                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#curriculumFaq">--}}
+{{--                        <div class="accordion-body">Class sizes are kept small, averaging 25 students per class.</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <!-- Teacher Applications -->--}}
+{{--            <div class="faq-category text-wrapper-32 flex">--}}
+{{--                <img class="faq-icon" src="{!! asset('assets/web/images/home/teacher.svg') !!}" alt="" > Teacher Applications--}}
+{{--            </div>--}}
+{{--            <div class="accordion p-3" id="teacherFaq">--}}
+{{--                <div class="accordion-item">--}}
+{{--                    <h2 class="accordion-header">--}}
+{{--                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq7">--}}
+{{--                            What are the teacher qualifications required?--}}
+{{--                        </button>--}}
+{{--                    </h2>--}}
+{{--                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#teacherFaq">--}}
+{{--                        <div class="accordion-body">A B.Ed. degree and relevant teaching experience are required.</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="accordion-item">--}}
+{{--                    <h2 class="accordion-header">--}}
+{{--                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq8">--}}
+{{--                            How can I apply for a teaching position?--}}
+{{--                        </button>--}}
+{{--                    </h2>--}}
+{{--                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#teacherFaq">--}}
+{{--                        <div class="accordion-body">You can apply through the careers section on our website.</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+        </div>
+    </section>
+@stop
+
+@section('js')
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // header slider
+        // header slider
+        let swiper = new Swiper(".swiper-container0", {
+            effect: "coverflow",
+            grabCursor: true,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: true,
+            },
+            centeredSlides: true,
+            slidesPerView: 3, // Show exactly 3 slides
+            initialSlide: 1,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 10,
+                slideShadows: false,
+            },
+        });
+
+    </script>
+
+    <!-- Events -->
+    <script>
+        const swiper2 = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                992: {
+                    slidesPerView: 4,
+                },
+            },
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("page-header");
+            const mainContent = document.getElementById("main-content");
+
+            const observer = new IntersectionObserver(
+                function (entries) {
+                    if (!entries[0].isIntersecting) {
+                        header.classList.add("sticky");
+                    } else {
+                        header.classList.remove("sticky");
+                    }
+                },
+                {
+                    root: null,
+                    threshold: 0,
+                    rootMargin: "0px 0px -100% 0px",
+                }
+            );
+
+            observer.observe(mainContent);
+        });
+    </script>
+
+    <!-- Life skills -->
+
+    <script>
+        new Swiper(".mySwiper2", {
+            slidesPerView: 1,
+            spaceBetween: 15,
+            breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                992: {
+                    slidesPerView: 4,
+                }
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+
+
+@stop

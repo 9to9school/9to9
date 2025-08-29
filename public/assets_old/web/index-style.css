@@ -1,0 +1,42 @@
+button {
+    cursor: pointer;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .swiper-slide {
+    width: 300px;
+    object-fit: cover;
+  }
+  
+  .arrow {
+    transition: transform 0.5s ease;
+  }
+  
+  .ans {
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .ans.open {
+    height: auto;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .swiper-slide {
+      width: 150px;
+    }
+  }
+  
+  @media screen and (min-width: 76p9x) and (max-width: 960px) {
+    .swiper-slide {
+      width: 200px;
+    }
+  }
+  

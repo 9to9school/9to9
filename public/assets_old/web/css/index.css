@@ -1,0 +1,719 @@
+.banner_section .row.align-items-center {
+    padding-left: 20px;
+}
+.card.border-0.shadow-sm.text-center.h-100 img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.banner_section {
+    background-image: url("https://9to9school.com/public/assets/web/images/home/hello.png");
+    background-size: cover;
+    background-position: center;
+    padding: 0 0 15em 0;
+}
+
+section.banner_section h1 {
+    font-size: 60px;
+}
+
+.banner_section p {
+    font-size: 25px;
+}
+
+.btn-custom {
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: 500;
+    background: #0dcaf0;
+    color: #fff;
+}
+
+.frame-3 {
+    background-color: #ffffff;
+    border-radius: 32px;
+    border: 1px solid;
+    border-color: #d9d9d9;
+    box-shadow: 0px 4px 12px #0000001f;
+}
+
+.frame-3 .card-body h5 {
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 61.9px;
+}
+
+.frame-3 .card-body p {
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #7f7f7f;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 32px;
+}
+
+.popular h5 {
+    font-family: "Poppins", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: auto;
+}
+
+.popular .frame-4 {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 33.92px;
+    padding: 36.75px 0px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 33.92px;
+    border: 2.83px solid;
+    border-color: #d9d9d9;
+}
+
+.popular .frame-4 img {
+    position: relative;
+    width: 118.73px;
+    height: 118.73px;
+    margin: 0 auto;
+}
+
+.popular .frame-4 p {
+    color: #000000;
+    font-size: 24px;
+    line-height: 32.8px;
+    position: relative;
+    align-self: stretch;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0;
+}
+
+.why_we_stand img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.why_we_stand a.btn.btn-sm.btn-purple.mt-2 {
+    background: purple;
+    color: #fff;
+}
+
+.why_we_stand .position-absolute.bottom-0.w-100.p-3.bg-dark.bg-opacity-50 {
+    text-align: center;
+}
+
+.why_we_stand img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.why_we_stand a.btn.btn-sm.btn-purple.mt-2 {
+    background: purple;
+    color: #fff;
+}
+
+.why_we_stand .position-absolute.bottom-0.w-100.p-3.bg-dark.bg-opacity-50 {
+    text-align: center;
+}
+
+/*  Events Activities */
+
+.events_activities h2 {
+    font-family: "Poppins", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: auto;
+}
+
+.events_activities .card {
+    background-color: #ffffff;
+    border-radius: 14.15px;
+    overflow: hidden;
+    box-shadow: 0px 2.65px 7.07px -0.88px #3232470d, 0px 0px 0.88px #0c1a4b3d;
+}
+
+.events_activities .card-body {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14.15px;
+    position: relative;
+    flex: 0 0 auto;
+    text-align: left;
+}
+
+.events_activities .card-body h6 {
+
+    font-weight: 600;
+    color: var(--themedarkdefault);
+    font-size: 14.1px;
+    letter-spacing: 0;
+    line-height: 19.2px;
+}
+
+.events_activities .card-body p {
+
+    font-weight: 400;
+    font-size: 12.4px;
+    letter-spacing: 0;
+    line-height: 20.3px;
+}
+
+.events_activities img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.events_activities a.btn.btn-sm.btn-purple {
+    background: purple;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+}
+
+.events_activities .card-body {
+    text-align: center;
+}
+
+.swiper {
+    padding-bottom: 40px;
+}
+
+.swiper-slide {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    /* .swiper-slide {
+          width: 25% !important;
+        } */
+}
+
+.nav-pills .nav-link {
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 8px 20px;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #6f42c1;
+}
+
+/*Child Learning Milestones*/
+
+.child-milestones h2 {
+    font-family: "Poppins", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: 0;
+}
+
+.child-milestones p {
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 32.6px;
+}
+.child-milestones .btn-purple {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 21.99px;
+    padding: 15.39px 30.98px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #571c99;
+    border-radius: 21.99px;
+
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0.66px;
+    line-height: auto;
+}
+
+.child-milestones .btn-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 21.99px;
+    background-color: #f0f0f0;
+    padding: 15.39px 30.98px;
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 21.99px;
+    border: 2.2px solid;
+    border-color: #e9ebf3;
+
+    font-weight: 400;
+    color: #202224;
+    font-size: 20px;
+    letter-spacing: 0.66px;
+    line-height: auto;
+}
+.child-milestones .tab-content h5 {
+
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: auto;
+}
+.child-milestones .tab-content h6 {
+    color: #000000;
+    font-size: 22.8px;
+    letter-spacing: 0;
+    line-height: auto;
+}
+.child-milestones .tab-content .frame-30 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 30px 30px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: #d9d9d9;
+}
+.child-milestones .tab-content ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+.child-milestones .tab-content ul li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.child-milestones .tab-content .frame-34 {
+    display: inline-flex
+;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #ebdafd;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+}
+.child-milestones .tab-content .text-wrapper-15 {
+    /*font-family: var(--body-b3r-font-family);*/
+    font-weight: var(--body-b3r-font-weight);
+    color: #571c99;
+    font-size: var(--body-b3r-font-size);
+    letter-spacing: var(--body-b3r-letter-spacing);
+    line-height: var(--body-b3r-line-height);
+    font-style: var(--body-b3r-font-style);
+}
+.child-milestones .tab-content .text-wrapper-16 {
+    position: relative;
+    width: 100%;
+    font-weight: 400;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+.child-milestones .tab-content .frame-35 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 49px 86px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #e8f4fe;
+    border-radius: 12px;
+    width:100%;
+}
+.child-milestones .tab-content .text-wrapper-18 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #7f7f7f;
+    font-size: 22.8px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: auto;
+}
+.child-milestones .tab-content .text-wrapper-19 {
+    position: relative;
+    align-self: stretch;
+    font-family: "Poppins", Helvetica;
+    font-weight: 700;
+    color: #0ac0df;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: auto;
+}
+.child-milestones .tab-content .text-wrapper-20 {
+    position: relative;
+    align-self: stretch;
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #7f7f7f;
+    font-size: 22.8px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: auto;
+}
+.child-milestones .tab-content .text-wrapper-21 {
+    position: relative;
+    align-self: stretch;
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: auto;
+}
+.child-milestones .tab-content .text-wrapper-22 {
+    position: relative;
+    align-self: stretch;
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #7f7f7f;
+    font-size: 22.8px;
+    letter-spacing: 0;
+    line-height: auto;
+}
+
+/* App banner*/
+
+.app-banner .start-your-child-s {
+    position: relative;
+    width: 656px;
+    margin-top: -1px;
+
+    font-weight: 800;
+    color: transparent;
+    font-size: 45px;
+    letter-spacing: 0;
+    line-height: 70.2px;
+}
+.app-banner .text-wrapper-40 {
+    color: #040c26;
+}
+
+.app-banner .text-wrapper-41 {
+    color: #0ac0df;
+}
+.app-banner .text-wrapper-40 {
+    color: #040c26;
+}
+.app-banner .text-wrapper-26 {
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #313c44;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 32px;
+}
+
+.child-milestones ul li::marker {
+    content: none;
+}
+
+/* life-skills*/
+.life-skills h2 {
+    position: relative;
+    width: 599.06px;
+    margin-top: -3.7px;
+    font-family: "Poppins", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: auto;
+}
+
+.life-skills .text-wrapper-11 {
+    position: relative;
+    width: fit-content;
+    font-family: "Poppins", Helvetica;
+    font-weight: 400;
+    color: #0056b3;
+    font-size: 24px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: auto;
+    text-decoration: underline;
+}
+.life-skills img {
+    height: 200px;
+}
+/*  quiz */
+.quiz .text-wrapper-25 {
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #0ac0df;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 32px;
+}
+
+.quiz .frame-46 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.quiz .unlock-two-days-of {
+
+    font-weight: 800;
+    color: #040c26;
+    font-size: 52px;
+    letter-spacing: 0;
+    line-height: 70.2px;
+}
+.quiz .text-wrapper-26 {
+    position: relative;
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #313c44;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 32px;
+}
+
+.quiz {
+    background-color: #fef5ef;
+}
+
+/* Skill Learn*/
+
+.skill-learn .text-wrapper-27 {
+    position: relative;
+    width: 599.06px;
+    font-family: "Poppins", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: auto;
+}
+
+.skill-learn .frame-52 {
+    align-items: center;
+    gap: 42px;
+    padding: 34px 73px;
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 32px;
+    background: linear-gradient(
+        91deg,
+        rgba(115, 152, 246, 1) 0%,
+        rgba(244, 72, 247, 1) 50%,
+        rgba(231, 67, 94, 1) 100%
+    );
+}
+.skill-learn .frame-52 .frame-53 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.skill-learn .text-wrapper-29 {
+    font-family: "Poppins", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 48px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: auto;
+}
+
+.skill-learn .text-6 {
+    position: relative;
+    align-self: stretch;
+
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 30.6px;
+    letter-spacing: 0;
+    line-height: 35px;
+}
+
+#faq .text-wrapper-31 {
+    font-family: "Poppins", Helvetica;
+    color: #35332f;
+    font-size: 40px;
+    line-height: 60px;
+    position: relative;
+    align-self: stretch;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0;
+}
+
+#faq .text-wrapper-32 {
+    opacity: 0.88;
+
+    font-weight: 600;
+    color: #1a1039;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 31.2px;
+    white-space: nowrap;
+}
+
+#faq .text-wrapper-32 i {
+    color: #1a1039;
+    font-size: 1.4rem;
+    vertical-align: middle;
+}
+.accordion-button::after {
+    transform: scale(1.3);
+}
+.accordion-item {
+    border: none;
+    border-bottom: 1px solid #e4e4e4;
+}
+.accordion-button {
+    background-color: #fff;
+    box-shadow: none;
+    padding-left: 0;
+    font-weight: 500;
+}
+.accordion-button:not(.collapsed) {
+    color: #0d6efd;
+    background-color: #f8f9fa;
+}
+.faq-icon {
+    margin-right: 10px;
+}
+
+/* .ctasection {
+    text-align: center;
+    padding: 5em;
+} */
+/* Category heading styling */
+.faq-category h5 {
+    color: #6f42c1;
+    /* purple-ish */
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+
+/* Optional: spacing between accordion items */
+.accordion-item + .accordion-item {
+    margin-top: 0.75rem;
+}
+
+/* Stand Apart */
+
+.stand-apart h2 {
+    font-family: "Poppins", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: auto;
+}
+
+.stand-apart .card-custom {
+    border-radius: 24px 24px 0px 0px;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    height: 100%;
+    padding: 0px;
+}
+
+.stand-apart .card-img-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+}
+
+.stand-apart .card-img-overlay h5 {
+    font-family: "Poppins", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 20.8px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: auto;
+}
+
+.stand-apart .card-img-overlay p {
+    font-family: "Manrope", Helvetica;
+    font-weight: 500;
+    color: #e6e6e6;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 11.8px;
+}
+
+.stand-apart .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stand-apart .btn-purple {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.stand-apart .btn-yellow {
+    background-color: #ffc107;
+    color: black;
+}
+
+.stand-apart .btn-green {
+    background-color: #28a745;
+    color: white;
+}
+
+.stand-apart .btn-teal {
+    background-color: #007bff;
+    color: white;
+}

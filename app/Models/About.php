@@ -1,0 +1,66 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class About extends Model
+{
+
+    protected $fillable = [
+        'banner_image',
+        'banner_heading',
+        'banner_sub_heading',
+        'banner_para',
+        'banner_btn_name',
+        'banner_btn_link',
+        'image_sec1',
+        'main_sub_heading',
+        'main_heading',
+        'main_para',
+        'icon_image1',
+        'sub_heading1',
+        'para1',
+        'icon_image2',
+        'sub_heading2',
+        'para2',
+        'icon_image3',
+        'sub_heading3',
+        'para3',
+        'icon_image4',
+        'sub_heading4',
+        'sub_heaading_sec2',
+        'heading_sec2',
+        'para_sec2',
+        'video_link_sec2',
+        'choose_heading',
+        'choose_icon1',
+        'choose_title1',
+        'choose_para1',
+        'choose_link1',
+        'choose_icon2',
+        'choose_title2',
+        'choose_para2',
+        'choose_link2',
+        'choose_icon3',
+        'choose_title3',
+        'choose_para3',
+        'choose_link3',
+        'choose_icon4',
+        'choose_title4',
+        'choose_para4',
+        'choose_link4',
+        'choose_icon5',
+        'choose_title5',
+        'choose_para5',
+        'choose_link5',
+        'choose_icon6',
+        'choose_title6',
+        'choose_para6',
+        'choose_link6',
+        'heading_newsletter',
+        'para_newsletter',
+        'image_newsletter',
+        'status',
+    ];
+}

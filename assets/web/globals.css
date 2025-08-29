@@ -1,0 +1,35 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Poppins:600,500,400,700|Open+Sans:600|Manrope:500|Inter:var(--body-b3r-font-weight),400,500,var(--button-base-font-weight),600|Roboto:800");
+@import url("https://fonts.googleapis.com/css?family=Inter:var(--h1-inter-font-weight),var(--body-b3r-font-weight),var(--headings-h5-font-weight),500,700,var(--text-m-semibold-font-weight),var(--text-small-regular-font-weight)|Poppins:600,500,400,700|Montserrat:500|DM+Sans:var(--paragraph-default-font-weight),var(--headings-typography-size-4-font-weight)");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+ .overlay-nav{
+      height: 100%;
+    width: 30% !importantimportant;
+    position: fixed;
+    z-index: 999999;
+    text-align: left;
+    top: 0;
+    left: auto;
+    right:0;
+    background-color: #39cce4f2;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 100px;
+    text-align: center;
+  }

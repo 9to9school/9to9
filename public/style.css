@@ -1,0 +1,230 @@
+/* Basic Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+/* Ongoing Classes */
+.ongoing-classes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.class-card {
+  width: 250px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  color: #333;
+}
+
+.class-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.pink {
+  background: #fdd1e0;
+}
+
+.yellow {
+  background: #fde9b7;
+}
+
+.blue {
+  background: #cce5ff;
+}
+
+/* Teachers Section */
+.teachers {
+  padding: 30px;
+}
+
+.teacher-list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.teacher-card img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+/* Weekly Schedule */
+.schedule {
+  background: #f3e9da;
+  padding: 30px;
+}
+
+.schedule-table {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.schedule-item {
+  width: 150px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
+.red {
+  background: #ff6b6b;
+}
+
+.yellow {
+  background: #f8c471;
+}
+
+.green {
+  background: #58d68d;
+}
+
+/* How It Works */
+.how-it-works {
+  padding: 30px;
+  background: white;
+}
+
+.app-buttons img {
+  width: 150px;
+  margin: 10px;
+}
+
+/* Gallery */
+.gallery-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-container img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+/* Contact */
+.contact {
+  background: #f3e9da;
+  padding: 30px;
+}
+
+.contact form input,
+.contact form textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact form button {
+  background: orange;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative; /* Ensure the button is in the document flow */
+  z-index: 10; /* Ensure it appears above other content */
+}
+
+/* Ensuring the button is displayed and remains visible */
+button[data-aos] {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Ensuring the button stays in its position even while scrolling */
+.contact form {
+  position: relative;
+}
+
+/* Scroll behavior fix */
+.contact form button {
+  position: relative;
+  top: 0;
+  z-index: 10; /* Ensure button stays above all other elements */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .ongoing-classes {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .class-card {
+    width: 200px;
+    padding: 10px;
+  }
+
+  .teacher-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .teacher-card img {
+    width: 180px;
+  }
+
+  .schedule-item {
+    width: 120px;
+    padding: 15px;
+  }
+
+  .app-buttons img {
+    width: 120px;
+  }
+
+  .gallery-container img {
+    width: 150px;
+  }
+
+  .contact form input,
+  .contact form textarea {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .class-card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .teacher-card img {
+    width: 150px;
+  }
+
+  .schedule-item {
+    width: 100px;
+    padding: 10px;
+  }
+
+  .app-buttons img {
+    width: 100px;
+  }
+
+  .gallery-container img {
+    width: 130px;
+  }
+
+  .contact form input,
+  .contact form textarea {
+    width: 95%;
+  }
+}
