@@ -216,8 +216,8 @@
                 </tr>
               </thead>
               @php
-    use Illuminate\Support\Str;
-@endphp
+                  use Illuminate\Support\Str;
+              @endphp
               <tbody>
                 @if($schools)
                 <?php $i = 1;

@@ -819,7 +819,7 @@ class TeacherController extends Controller
     public function editTeacher($id)
     {
         $teacher = Teacher::with('user')->findOrFail($id);
-         $schools = School::where('status','active')->get();
+        $schools = School::where('status','active')->get();
         $topics = Topic::with('popular')->get();
         $shifts = Shift::all();
        

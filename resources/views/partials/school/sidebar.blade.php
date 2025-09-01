@@ -105,9 +105,18 @@
                                 <li><a href="{{ route('student.attendance.report')}}">Student Attendance</a></li>
                                 <li><a href="{{ route('teacher.attendance.report')}}">Teacher Attendance</a></li>
                             </ul>
-                        </li>        
-                    </ul>
-                    <ul>                       
+                        </li>  
+                        
+                        <li class="submenu">
+                            <a href="javascript:void(0);"><i
+                                    class="ti ti-calendar-share"></i><span>Teacher Vacancy</span><span
+                                    class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="{{ route('teacher.vacancy.list')}}">Teacher Vacancy</a></li>
+                            </ul>
+                        </li>  
+                    
+                                       
                         <li class="submenu">
                             <a href="javascript:void(0);"><i
                                     class="ti ti-calendar-share"></i><span>Leaves</span><span

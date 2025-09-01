@@ -134,11 +134,13 @@ class PartnerSchoolController extends Controller
 
         $fees = [];
 
-        foreach ($request->annual_fees as $index => $annualFee) {
-            $fees[] = [
-                'annual_fees' => $annualFee,
-                'per_month_fees' => $request->per_month_fees[$index] ?? null,
-            ];
+        if ($request->has('annual_fees') && is_array($request->annual_fees)) {
+            foreach ($request->annual_fees as $index => $annualFee) {
+                $fees[] = [
+                    'annual_fees' => $annualFee,
+                    'per_month_fees' => $request->per_month_fees[$index] ?? null,
+                ];
+            }
         }
 
         $request->validate([

@@ -48,6 +48,7 @@ use App\Http\Controllers\API\PartnerSchoolController;
 use App\Http\Controllers\API\EnquiryPartnerSchoolController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\API\PartnerSchoolReviewController;
+use App\Http\Controllers\API\TeacherVacncyController;
 
 // Register Routes 
 Route::post('/register', [UserController::class, 'sendotp']);
@@ -154,7 +155,8 @@ Route::post('/enquiry_partner_school', [EnquiryPartnerSchoolController::class, '
 Route::post('/send-device-token', [NotificationController::class, 'device_token']);
 Route::post('/store-partner-school-review', [PartnerSchoolReviewController::class, 'store']);
 Route::get('/get-review/{id}', [PartnerSchoolReviewController::class, 'index']);
-
+Route::get('/all-vacancies', [TeacherVacncyController::class, 'index']);
+Route::get('/apply-vacancy', [TeacherVacncyController::class, 'apply']);
 
 
 Route::prefix('parent')->group(function () {

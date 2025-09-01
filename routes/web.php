@@ -87,6 +87,7 @@ use App\Http\Controllers\PartnerSchoolController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\FinancialReportController;
 use App\Http\Controllers\BecomePartnerController;
+use App\Http\Controllers\TeacherVacancyController;
 
 
 Route::get('/clear-cache', function() {
@@ -913,6 +914,15 @@ Route::middleware(['school'])->group(function () {
     // Financial Report Report
     Route::get('/financial-report', [FinancialReportController::class, 'show'])->name('school.financial.report');
 
+    // Teacher Vacancy Route
+    Route::get('/all-teacher-vacancy', [TeacherVacancyController::class, 'index'])->name('teacher.vacancy.list');
+    Route::get('/add-teacher-vacancy', [TeacherVacancyController::class, 'create'])->name('teacher.vacancy.create');
+    Route::post('/post-vacancy', [TeacherVacancyController::class, 'store'])->name('teacher.vacancy.store');
+    Route::get('/edit-teacher-vacancy/{id}', [TeacherVacancyController::class, 'edit'])->name('teacher.vacancy.edit');
+    Route::post('/update-teacher-vacancy', [TeacherVacancyController::class, 'update'])->name('teacher.vacancy.update');
+    Route::get('/vacancy-delete/{id}', [TeacherVacancyController::class, 'destroy'])->name('teacher.vacancy.destroy');  
+
+
     });
 });
 
@@ -936,6 +946,8 @@ Route::prefix('marketing')->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('admin.login');
     Route::get('logout', [AuthController::class, 'logout'])->name('admin.logout');
 });
+
+
 //  marketing  Routes
 Route::middleware(['marketing'])->group(function () {
     Route::prefix('marketing')->group(function () {
