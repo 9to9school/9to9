@@ -23,4 +23,12 @@ class TeacherVacancy extends Model
         'job_description',
         'status',
     ];
+
+
+    public function school()
+    {
+        return $this->belongsTo(School::class, 'school_id', 'id');
+    }
+
+    
 }

@@ -6,18 +6,51 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TeacherVacancy;
 use App\Models\TeacherApplication;
+use App\Models\Shift;
+use App\Models\Topic; 
 
 
 class TeacherVacncyController extends Controller
 {
     public function index()
     {
-        $vacancies = TeacherVacancy::Pget();
+        $vacancies = TeacherVacancy::with('school')->get()->map(function ($vacancy) {
+            return [
+
+                'id'          => $vacancy->id,
+                'title'       => $vacancy->title,
+                'school_name' => $vacancy->school->school_name ?? null,
+                'students'      => $vacancy->students,
+                'qualification'   => $vacancy->qualification,
+                'fee'   => $vacancy->fee,
+                'openings'   => $vacancy->openings,
+                'status'   => $vacancy->status,
+                'experience'   => $vacancy->experience,
+                'job_description'   => $vacancy->job_description,
+                // syllabus IDs → names
+                'syllabus' => $vacancy->syllabus
+                    ? Topic::whereIn('id', json_decode($vacancy->syllabus, true))
+                        ->pluck('topic_name')
+                    : [],
+
+                // shift IDs → id + time range
+                'shift' => $vacancy->shift
+                    ? Shift::whereIn('id', json_decode($vacancy->shift, true))
+                        ->get(['id', 'time_from', 'time_to'])
+                        ->map(function ($item) {
+                            return [
+                                'id'   => $item->id,
+                                'name' => $item->time_from . " - " . $item->time_to,
+                            ];
+                        })
+                    : [],
+            ];
+        });
 
         return response()->json([
-            'status' => true,
+            'status'  => true,
             'message' => 'Vacancy list fetched successfully',
-            'data' => $vacancies
+            'data'    => $vacancies
         ]);
     }
 

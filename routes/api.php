@@ -156,7 +156,7 @@ Route::post('/send-device-token', [NotificationController::class, 'device_token'
 Route::post('/store-partner-school-review', [PartnerSchoolReviewController::class, 'store']);
 Route::get('/get-review/{id}', [PartnerSchoolReviewController::class, 'index']);
 Route::get('/all-vacancies', [TeacherVacncyController::class, 'index']);
-Route::get('/apply-vacancy', [TeacherVacncyController::class, 'apply']);
+Route::post('/apply-vacancy', [TeacherVacncyController::class, 'apply']);
 
 
 Route::prefix('parent')->group(function () {
